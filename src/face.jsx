@@ -26,10 +26,14 @@ const Face = () => {
                     </a>
                 </div>
 
-                {/* Contact Button */}
-                <button className="contact-button" onClick={() => window.location.href = "mailto:swayamsam2005@gmail.com"}>
-                    <span className="icon"><MdOutlineEmail /></span>&nbsp;&nbsp;Contact Me
-                </button>
+               {/* Contact Button */}
+<button 
+    className="contact-button" 
+    onClick={() => window.open("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new", "_blank")}
+>
+    <span className="icon"><MdOutlineEmail /></span>&nbsp;&nbsp;Contact Me
+</button>
+
             </div>
 
             </>
