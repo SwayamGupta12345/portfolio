@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaCode, FaDatabase, FaRobot, FaGlobe } from "react-icons/fa";
 import "./facecard.css";
 import "./projects.css";
-import "./Skills.css";
+import "./skills.css";
 import Navbot from "./navbot";
 
 const skills = [
