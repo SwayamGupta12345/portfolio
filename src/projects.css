@@ -1,0 +1,185 @@
+
+/* Portfolio Container */
+.portfolio-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 95dvw;
+    min-width:90dvw;
+    background-color: #121212;
+    color: white;
+    padding: 20px;
+    min-height: 115dvh;
+    /* max-height:10dvh; */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin:40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+.intro-section{
+    max-width: 95dvw;
+    min-width:80dvw;
+    text-align: left;
+    margin: 10px;
+    padding:10px;
+}
+.projects-title {
+    margin:4px auto;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 30px;
+    margin: 15px 10px;
+    padding: 10px;
+    justify-content: center;
+    width: 100%; /* Ensure grid does not overflow */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+}
+.desc{
+    font-size:50px;
+}
+/* Project Card */
+.project-card {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    min-width: 280px;
+    max-width: 320px;
+    min-height: 250px; /* Remove conflicting max-height */
+    
+    margin: 15px; /* Equal spacing */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Project Title */
+.project-card h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Project Description */
+.project-card p {
+    font-size: 15px;
+    color: #bbb;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.project-card {
+    background: #1e1e1e;
+    padding: 18px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    position: relative; /* Needed for absolute positioning inside */
+    min-height: 220px; /* Ensures enough space for content */
+    max-height:100px;
+    min-width:260px;
+    margin-left:40px;
+}
+
+/* GitHub link pinned to the bottom */
+.project-card .repol {
+    position: absolute;
+    bottom: 15px; /* Fixed distance from bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the link */
+    color: #4dabf7;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: color 0.3s, background 0.3s;
+}
+/* GitHub link pinned to the bottom */
+.project-card .repoll {
+    position: absolute;
+    bottom: 33px; /* Fixed distance from bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the link */
+    color: #4dabf7;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: color 0.3s, background 0.3s;
+
+        font-size: 14px;
+        color: #bbb;
+        font-style: italic;
+        margin-bottom: 10px;
+    
+}
+
+.project-card .repol:hover {
+    background: #4dabf7;
+    color: #1e1e1e;
+}
+
+/* Ensure project cards scale properly */
+.project-card {
+    background: #1e1e1e;
+    padding: 18px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    min-height: 220px;
+    max-height: 300px; /* Enough height to fit content */
+    overflow: hidden;
+}
+
+/* Truncate descriptions */
+.project-card p {
+    font-size: 15px;
+    color: #bbb;
+    line-height: 1.4;
+    max-height: 3.6em;
+    text-overflow: ellipsis;
+}
+@media (max-width: 1100px) { /* Adjust for medium screens */
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr); /* Show 3 per row */
+    }
+}
+
+@media (max-width: 800px) { /* Adjust for tablets */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Show 2 per row */
+    }
+}
+
+@media (max-width: 500px) { /* Adjust for mobile screens */
+    .projects-grid {
+        grid-template-columns: repeat(1, 1fr); /* Show 1 per row */
+    }
+}

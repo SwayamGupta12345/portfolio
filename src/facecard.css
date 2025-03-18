@@ -1,0 +1,188 @@
+html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Ensures elements stack vertically */
+    justify-content: flex-start; /* Aligns content to the top */
+    align-items: center;
+    background-color: #121212;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Portfolio Container */
+.portfolio-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 95dvw;
+    min-width:90dvw;
+    background-color: #121212;
+    color: white;
+    padding: 20px;
+    min-height: 95dvh;
+    max-height:100dvh;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin:40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    
+}
+
+
+/* Trigger the animation when the page loads */
+.portfolio-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Profile Card */
+.profile-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 30dvw;
+    min-width:25dvw;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    margin:40px 40px 40px 100px;
+    min-height:95dwh;
+    max-height:100dwh;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0 20px 0px;
+}
+
+.icon {
+    color: white;
+    font-size: 2rem;
+    transition: font-size 0.3s ease;
+    text-decoration: none; /* Prevents any link decoration */
+    transition: transform 0.2s ease-in-out;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    color: white; /* Explicitly ensures color stays white */
+}
+
+/* Contact Button */
+.contact-button {
+    background-color:rgb(93, 214, 113);
+    border: none;
+    padding: 0px 10px 10px 5px ;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size:17px;
+   
+}
+
+.contact-button:hover {
+    background-color:rgb(67, 195, 89);
+}
+
+/* Intro Section */
+.intro-section {
+    max-width: 1000px;
+    min-width:600px;
+    width: 90%; /* Ensure it uses available width */
+    text-align: left;
+    margin: auto 100px;
+    box-sizing: border-box;  /* Include padding in width calculation */
+    padding: 20px;  /* Space around content */  
+}
+.intro-section p {
+    white-space: normal;
+    word-wrap: break-word; /* Allow long words to break */
+    font-size: 16px;
+}
+
+.slogan{
+    font-size:25px;
+    padding:10px 0px;
+}
+.highlight {
+    color: #00ff88;
+}
+h2{
+    font-size:2.5rem;
+}
+p{
+    font-size:16px;
+}
+.navbot {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center the icons */
+    align-items: center;
+    gap: 40px; /* Ensure spacing between icons */
+    border-radius: 50px;
+    background-color: #121212;
+    border: 2px solid #1e1e1e;
+    padding: 10px 40px; /* Adjust padding for better spacing */
+    font-size: 20px;
+    position: fixed;
+    top: 50px;
+    right:20vw; 
+}
+
+.navi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Ensure it's clickable */
+    font-size: 24px; /* Adjust icon size */
+    color: white; /* Improve visibility */
+}
+
+.navi:hover{
+    transform: scale(1.2);
+}
+.download {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds space between icon and text */
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #1e1e1e;
+    border: 2px solid #292929;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top:30px;
+    margin-bottom:50px;
+    background-color:rgb(93, 214, 113);
+}
+
+.download:hover {
+    background-color:rgb(67, 195, 89);
+    border-color: #3a3a3a;
+    transform: scale(1.05);
+}
+
+.download:active {
+    transform: scale(0.98);
+}
+
