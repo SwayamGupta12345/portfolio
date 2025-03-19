@@ -152,8 +152,8 @@ p {
   border-radius: 50px;
   background-color: #181818; /* Dark but soft background */
   border: 2px solid #1e1e1e; /* Subtle border */
-  padding: 10px 40px; /* Adjust padding for a plush look */
-  font-size: 16px;
+  padding: 8px 40px; /* Adjust padding for a plush look */
+  font-size: 18px;
   position: fixed;
   top: 50px;
   right: 18dvw;
@@ -168,7 +168,7 @@ p {
 
 /* Expand effect when hovering */
 .navbot.expanded {
-  padding: 18px 50px;
+  padding: 12px 20px;
   background-color: #141414; /* Slightly darker for effect */
 }
 
@@ -225,12 +225,19 @@ p {
 
 /* Label only appears on hover */
 .nav-label {
-  font-size: 14px;
+  font-size: 12px;
   color: white;
   background: rgba(100, 100, 255, 0.8);
   padding: 6px 12px;
   border-radius: 15px;
-  transition: all 0.3s;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+.nav-item:hover .nav-label {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .navi:hover {
