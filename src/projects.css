@@ -10,7 +10,7 @@
     background-color: #121212;
     color: white;
     padding: 20px;
-    min-height: 115dvh;
+    min-height: 85dvh;
     /* max-height:10dvh; */
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -27,23 +27,31 @@
     padding:10px;
 }
 .projects-title {
-    margin:4px auto;
+    margin: 10px 0;
     font-size: 26px;
     font-weight: bold;
     text-align: center;
     color: #fff;
     letter-spacing: 1px;
+    position: absolute;  /* Change to absolute to keep it aligned with the parent */
+    left: 50%;
+    top: 55px; /* Adjust the top position as needed */
+    transform: translateX(-50%);
+    width: max-content;
+    align-items:center;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
-    gap: 30px;
-    margin: 15px 10px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin: 110px 0px 20px auto; /* Adjust margin for spacing */
     padding: 10px;
-    justify-content: center;
-    width: 100%; /* Ensure grid does not overflow */
+    width: 90%; /* Prevent overflow and add spacing */
+    max-width: 1200px; /* Optional: Limit max width */
+    place-items: center; /* Ensure grid items are centered */
 }
+
 
 
 /* Responsive Design */
@@ -59,7 +67,7 @@
 .project-card {
     background: #1e1e1e;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 25px;
     text-align: center;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -108,7 +116,7 @@
 /* GitHub link pinned to the bottom */
 .project-card .repol {
     position: absolute;
-    bottom: 15px; /* Fixed distance from bottom */
+    bottom: 10px; /* Fixed distance from bottom */
     left: 50%;
     transform: translateX(-50%); /* Centers the link */
     color: #4dabf7;

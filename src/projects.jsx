@@ -3,6 +3,8 @@ import "./facecard.css";
 import "./projects.css";
 import Navbot from "./navbot";
 import { FaLink } from "react-icons/fa";
+import { FaBarsProgress } from "react-icons/fa6";
+
 
 
 const Projects = () => {
@@ -37,6 +39,7 @@ const Projects = () => {
 
     return (
         <div className={`portfolio-container ${isVisible ? "show" : ""}`} id="projects">
+            <div className="pagetitle"> <FaBarsProgress /> &nbsp;Projects </div>
             {/* Right Section */}
             <div className="intro-section">
 
@@ -69,7 +72,7 @@ const Projects = () => {
 
                     </div>
                 )}
-                <Navbot />
+
             </div>
         </div>
     );

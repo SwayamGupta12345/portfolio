@@ -4,7 +4,8 @@ import { FaCode, FaDatabase, FaRobot, FaGlobe } from "react-icons/fa";
 import "./facecard.css";
 import "./projects.css";
 import "./skills.css";
-import Navbot from "./navbot";
+import {  FaMicrochip } from "react-icons/fa6";
+
 
 const skills = [
   {
@@ -48,6 +49,7 @@ const Skills = () => {
 
   return (
     <div className={`portfolio-container ${isVisible ? "show" : ""}`} id="skills">
+       <div className="pagetitle"> <FaMicrochip/> &nbsp;Skills </div>
       <div className="skills-container">
         <h2 className="skills-title">Technical Skills</h2>
         <div className="skills-grid">
@@ -88,7 +90,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-      <Navbot/>
+    
     </div>
   );
 };

@@ -1,121 +1,130 @@
 /* General Styling */
-html, body, #root {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #121212;
-    font-family: Arial, sans-serif;
-    color: white;
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #121212;
+  font-family: Arial, sans-serif;
+  color: white;
 }
 
 /* Intro Section */
 .intro-section {
-    flex: 1;
-    max-width: 600px;
-    padding: 20px;
-    text-align: left;
-    margin-left:20px;
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+  text-align: left;
+  margin-left: 20px;
 }
 
 .highlight {
-    color: #00ff88;
+  color: #00ff88;
 }
 
 .intro-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .intro-section p {
-    font-size: 1rem;
-    margin-bottom: 20px;
+  font-size: 1rem;
+  margin-bottom: 20px;
 }
 
 /* Contact Form */
 .contact-form-container {
-    /* display: flex; */
-    justify-content: center;
-    align-items: left;
-    width: 100%;
+  /* display: flex; */
+  justify-content: center;
+  align-items: left;
+  width: 100%;
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: 550px;
-    height:400px;
-    background: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 800px;
+  height: 400px;
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .form-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    font-size: 1.25rem;
-    color: white;
-    background: #292929;
-    border: none;
-    border-radius: 5px;
-    outline: none;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.15rem;
+  color: white;
+  background: #292929;
+  border: none;
+  border-radius: 5px;
+  outline: none;
 }
 
 .contact-form textarea {
-    resize: none;
-    height: 120px;
+  resize: none;
+  height: 145px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 2px solid lightblue; /* Light blue border when typing */
+    outline: none; /* Removes default focus outline */
+    transition: border 0.3s ease-in-out; /* Smooth transition effect */
 }
 
 .send-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    background-color: rgb(93, 214, 113);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgb(93, 214, 113);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .send-button:hover {
-    background-color: rgb(67, 195, 89);
-    transform: scale(1.05);
+  background-color: rgb(67, 195, 89);
+  transform: scale(1.05);
 }
 
 .send-button:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .portfolio-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .portfolio-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .intro-section {
-        max-width: 100%;
-        text-align: center;
-    }
+  .intro-section {
+    max-width: 100%;
+    text-align: center;
+  }
 
-    .form-group {
-        grid-template-columns: 1fr;
-    }
+  .form-group {
+    grid-template-columns: 1fr;
+  }
 }

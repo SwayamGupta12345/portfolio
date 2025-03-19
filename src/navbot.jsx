@@ -1,28 +1,44 @@
-
-import { MdOutlineEmail } from "react-icons/md";
-import "./facecard.css";
+import React, { useState } from "react";
 import { IoHomeOutline, IoPersonOutline } from "react-icons/io5";
-import { FaGraduationCap } from "react-icons/fa6";
-import { FaBarsProgress, FaMicrochip } from "react-icons/fa6";
+import { FaGraduationCap, FaMicrochip, FaBarsProgress } from "react-icons/fa6";
+import { MdOutlineEmail } from "react-icons/md";
 
-const navbot = () => {
+const navItems = [
+    { id: "home", icon: <IoHomeOutline />, label: "Home" },
+    { id: "about", icon: <IoPersonOutline />, label: "About" },
+    { id: "education", icon: <FaGraduationCap />, label: "Education" },
+    { id: "skills", icon: <FaMicrochip />, label: "Skills" },
+    { id: "projects", icon: <FaBarsProgress />, label: "Projects" },
+    { id: "contact", icon: <MdOutlineEmail />, label: "Contact" }
+];
+
+const Navbot = () => {
+    const [hovered, setHovered] = useState(null);
+
     const scrollToSection = (id) => {
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
+        if (id === "home") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
         }
     };
+
     return (
         <div className="navbot">
-            <IoHomeOutline onClick={() => scrollToSection("home")}  className="navi"/>
-            <IoPersonOutline onClick={() => scrollToSection("about")} className="navi" />
-            <FaGraduationCap onClick={() => scrollToSection("education")} className="navi"/>
-            <FaMicrochip onClick={() => scrollToSection("skills")} className="navi"/>
-            <FaBarsProgress onClick={() => scrollToSection("projects")} className="navi" />
-            <MdOutlineEmail onClick={() => scrollToSection("contact")} className="navi" />
+            {navItems.map(({ id, icon, label }) => (
+                <div
+                    key={id}
+                    className="nav-item"
+                    onMouseEnter={() => setHovered(id)}
+                    onMouseLeave={() => setHovered(null)}
+                    onClick={() => scrollToSection(id)}
+                >
+                    {icon}
+                    {hovered === id && <span className="nav-label">{label}</span>}
+                </div>
+            ))}
         </div>
-
     );
 };
 
-export default navbot;
+export default Navbot;

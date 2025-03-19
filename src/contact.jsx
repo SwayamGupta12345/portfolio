@@ -5,6 +5,7 @@ import Face from "./face";
 import Navbot from "./navbot";
 import "./contact.css"
 import emailjs from "@emailjs/browser";  // Import EmailJS
+import { MdOutlineEmail } from "react-icons/md";
 const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -49,6 +50,7 @@ const Contact = () => {
 
     return (
         <div className={`portfolio-container ${isVisible ? "show" : ""}`} id="contact">
+             <div className="pagetitle"> <MdOutlineEmail /> &nbsp;Contact me </div>
             <Face />
             <div className="intro-section">
                 <h1>Contact <span className="highlight">Me</span></h1>
@@ -66,7 +68,7 @@ const Contact = () => {
                         </button>
                     </form>
                 </div>
-                <Navbot />
+            
             </div>
         </div>
     );

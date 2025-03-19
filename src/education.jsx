@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { LuDownload } from "react-icons/lu";
 import Face from "./face";
-import Navbot from "./navbot";
 import "./education.css";
-
+import { FaGraduationCap } from "react-icons/fa6";
 const Education = () => {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -34,6 +32,8 @@ const Education = () => {
 
     return (
         <div className={`portfolio-container ${isVisible ? "show" : ""}`} id="education">
+                        <div className="pagetitle"> <FaGraduationCap /> &nbsp;Education </div>
+
             <Face />
             {/* Right Section */}
             <div className="education-section" >
@@ -50,7 +50,7 @@ const Education = () => {
                         </div>
                     ))}
                 </div>
-                <Navbot />
+                
             </div>
         </div>
     );
