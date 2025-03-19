@@ -195,6 +195,44 @@ p {
   color: white; /* Improve visibility */
 }
 
+/* Expand when hovered */
+.navbot.expanded {
+  padding: 15px;
+  background: #121212;
+  transition: all 0.3s;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 15px;
+  transition: all 0.3s;
+  color: #888;
+}
+
+.nav-item:hover {
+  background: rgba(100, 100, 255, 0.2);
+  color: #fff;
+}
+
+/* Icon styling */
+.nav-icon {
+  font-size: 22px;
+}
+
+/* Label only appears on hover */
+.nav-label {
+  font-size: 14px;
+  color: white;
+  background: rgba(100, 100, 255, 0.8);
+  padding: 6px 12px;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
 .navi:hover {
   transform: scale(1.2);
 }
@@ -258,40 +296,3 @@ p {
 
 
 
-/* Expand when hovered */
-.navbot.expanded {
-  padding: 15px;
-  background: #121212;
-  transition: all 0.3s;
-}
-
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 15px;
-  transition: all 0.3s;
-  color: #888;
-}
-
-.nav-item:hover {
-  background: rgba(100, 100, 255, 0.2);
-  color: #fff;
-}
-
-/* Icon styling */
-.nav-icon {
-  font-size: 22px;
-}
-
-/* Label only appears on hover */
-.nav-label {
-  font-size: 14px;
-  color: white;
-  background: rgba(100, 100, 255, 0.8);
-  padding: 6px 12px;
-  border-radius: 15px;
-  transition: all 0.3s;
-}
