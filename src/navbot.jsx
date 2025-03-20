@@ -22,10 +22,12 @@ const Navbot = () => {
     const scrollToSection = (id) => {
         if (id === "home") {
             window.scrollTo({ top: 0, behavior: "smooth" });
+        } else if (id === "contact") {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
         } else {
             document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
         }
-    };
+    };    
 
     return (
         <div className={`navbot ${isVisible ? "visible" : "hidden"}`}>
@@ -46,4 +48,3 @@ const Navbot = () => {
 };
 
 export default Navbot;
-    
