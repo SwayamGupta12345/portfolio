@@ -9,9 +9,9 @@ const Face = () => {
             <div className="profile-card">
                 <img src={profileph} alt="Profile" className="profile-image" />
                 <h2>Swayam Gupta</h2>
-                <p>Web Developer</p>
+                <p>Web Developer, AI Enthusiast</p>
                 <p>swayamsam2005@gmail.com</p>
-                <p>Bareilly, U.P, India</p>
+                <p>Delhi, India</p>
 
                 {/* Social Icons */}
                 <div className="social-icons">
