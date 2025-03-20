@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { IoHomeOutline, IoPersonOutline } from "react-icons/io5";
+import { IoHome, IoPerson } from "react-icons/io5";
 import { FaGraduationCap, FaMicrochip, FaBarsProgress } from "react-icons/fa6";
-import { MdOutlineEmail } from "react-icons/md";
-
+import { MdEmail } from "react-icons/md";
 const navItems = [
-    { id: "home", icon: <IoHomeOutline />, label: "Home" },
-    { id: "about", icon: <IoPersonOutline />, label: "About" },
+    { id: "home", icon: <IoHome />, label: "Home" },
+    { id: "about", icon: <IoPerson />, label: "About" },
     { id: "education", icon: <FaGraduationCap />, label: "Education" },
     { id: "skills", icon: <FaMicrochip />, label: "Skills" },
     { id: "projects", icon: <FaBarsProgress />, label: "Projects" },
-    { id: "contact", icon: <MdOutlineEmail />, label: "Contact" }
+    { id: "contact", icon: <MdEmail />, label: "Contact" }
 ];
 
 const Navbot = () => {
