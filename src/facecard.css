@@ -149,7 +149,7 @@ p {
   border-radius: 50px;
   background-color: #181818; /* Dark but soft background */
   border: 2px solid #1e1e1e; /* Subtle border */
-  padding: 0px 40px; /* Adjust padding for a plush look */
+  padding: 5px 40px; /* Adjust padding for a plush look */
   font-size: 18px;
   position: fixed;
   top: 50px;
@@ -172,13 +172,14 @@ p {
 .navbot:hover {
   transform: scale(1.02);
   box-shadow: 0 1px 1px rgba(112, 236, 132, 0.8), 0 2px 2px rgba(255, 255, 255, 0.3) inset;
+  padding:7px 40px;
 }
 .nav-item {
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  padding: 10px;
+  padding: 15px;
 }
 
 
@@ -187,7 +188,7 @@ p {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  padding: 10px;
+  padding: 3px;
   border-radius: 15px;
   transition: all 0.3s;
   color: #888;
@@ -197,6 +198,7 @@ p {
   background: rgba(100, 100, 255, 0.2);
   color: #fff;
   transition: opacity 0.4s ease, transform 0.3s ease;
+  padding: 10px 7px;
 }
 
 /* Label only appears on hover */
@@ -204,7 +206,7 @@ p {
   font-size: 12px;
   color: white;
   background: rgba(100, 100, 255, 0.8);
-  padding: 6px 12px;
+  padding: 3px 12px;
   border-radius: 15px;
   opacity: 0;
   transform: scale(0.9);
