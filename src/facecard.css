@@ -145,7 +145,7 @@ p {
   flex-direction: row;
   justify-content: center; /* Center the icons */
   align-items: center;
-  gap: 40px; /* Ensure spacing between icons */
+  gap: 25px; /* Ensure spacing between icons */
   border-radius: 50px;
   background-color: #181818; /* Dark but soft background */
   border: 2px solid #1e1e1e; /* Subtle border */
@@ -168,20 +168,20 @@ p {
 .navbot.visible {
   opacity: 1;
 }
-
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  padding: 10
-}
-
 /* Optional: Hover effect for extra cuteness */
 .navbot:hover {
   transform: scale(1.02);
   box-shadow: 0 1px 1px rgba(112, 236, 132, 0.8), 0 2px 2px rgba(255, 255, 255, 0.3) inset;
 }
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+
 .nav-item {
   display: flex;
   align-items: center;
@@ -196,6 +196,7 @@ p {
 .nav-item:hover {
   background: rgba(100, 100, 255, 0.2);
   color: #fff;
+  transition: opacity 0.4s ease, transform 0.3s ease;
 }
 
 /* Label only appears on hover */
@@ -207,14 +208,13 @@ p {
   border-radius: 15px;
   opacity: 0;
   transform: scale(0.9);
-  transition: opacity 0.4s ease, transform 0.3s ease;
+  transition: opacity 0.4s ease, transform 0.3s ease;  
 }
 
 .nav-item:hover .nav-label {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(0.9);
 }
-
 
 .pagetitle {
   position: fixed;
