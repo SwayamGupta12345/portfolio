@@ -13,7 +13,6 @@ body,
   font-family: Arial, sans-serif;
 }
 
-
 /* Portfolio Container */
 .portfolio-container {
   display: flex;
@@ -38,13 +37,11 @@ body,
   box-shadow: 0 1px 1px rgba(112, 236, 132, 0.8), 0 1px 1px rgba(255, 255, 255, 0.2) inset;
 }
 
-
 /* Trigger the animation when the page loads */
 .portfolio-container.show {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 /* Profile Card */
 .profile-card {
@@ -164,20 +161,12 @@ p {
   /* Soft glowing shadow */
   box-shadow: 0 1px 1px rgba(112, 236, 132, 0.8), 
               0 1px 1px rgba(255, 255, 255, 0.2) inset;
-}
-.navbot {
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
 
+              opacity: 0;
+              transition: opacity 0.3s ease-in-out;
+}
 .navbot.visible {
   opacity: 1;
-}
-
-/* Expand effect when hovering */
-.navbot.expanded {
-  padding: 12px 20px;
-  background-color: #141414; /* Slightly darker for effect */
 }
 
 .nav-item {
@@ -193,23 +182,6 @@ p {
   transform: scale(1.02);
   box-shadow: 0 1px 1px rgba(112, 236, 132, 0.8), 0 2px 2px rgba(255, 255, 255, 0.3) inset;
 }
-
-.navi {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer; /* Ensure it's clickable */
-  font-size: 24px; /* Adjust icon size */
-  color: white; /* Improve visibility */
-}
-
-/* Expand when hovered */
-.navbot.expanded {
-  padding: 15px;
-  background: #121212;
-  transition: all 0.3s;
-}
-
 .nav-item {
   display: flex;
   align-items: center;
@@ -224,11 +196,6 @@ p {
 .nav-item:hover {
   background: rgba(100, 100, 255, 0.2);
   color: #fff;
-}
-
-/* Icon styling */
-.nav-icon {
-  font-size: 22px;
 }
 
 /* Label only appears on hover */
@@ -248,9 +215,6 @@ p {
   transform: scale(1);
 }
 
-.navi:hover {
-  transform: scale(1.2);
-}
 
 .pagetitle {
   position: fixed;
