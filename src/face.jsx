@@ -29,7 +29,7 @@ const Face = () => {
                 {/* Contact Button */}
                 <button
                     className="contact-button"
-                    onClick={() => window.open("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new", "_blank")}
+                    onClick={() => window.open("https://mail.google.com/mail/u/0/?fs=1&to=swayamsam2005@gmail.com&tf=cm", "_blank")}
                 >
                     <span className="icon"><MdOutlineEmail /></span>&nbsp;&nbsp;Contact Me
                 </button>
