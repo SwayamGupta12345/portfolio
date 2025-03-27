@@ -36,6 +36,7 @@ const Projects = () => {
             });
 
     }, []);
+    const excludedRepos = ["portfolio"]; // Add more repo names here if needed
 
     return (
         <div className={`portfolio-container ${isVisible ? "show" : ""}`} id="projects">
@@ -50,26 +51,28 @@ const Projects = () => {
                 {error && <p className="error-message">{error}</p>}
 
                 {!loading && !error && (
+
+
                     <div className="projects-grid">
-                        {repos.map((repo) => (
-                            <div key={repo.id} className="project-card">
-                                <h3>{repo.name}</h3>
-                                <p className="desc">
-                                    {repo.description ? repo.description.split(" ").slice(0, 10).join(" ") + "..." : "No description available."}
-                                </p>
+                        {repos
+                            .filter(repo => !excludedRepos.includes(repo.name.toLowerCase())) // Exclude specified repos
+                            .map(repo => (
+                                <div key={repo.id} className="project-card">
+                                    <h3>{repo.name}</h3>
+                                    <p className="desc">
+                                        {repo.description ? repo.description.split(" ").slice(0, 10).join(" ") + "..." : "No description available."}
+                                    </p>
 
-                                {/* Language Display with Fallback */}
-                                <p className="repoll">
-                                    🖥️ {repo.language ? repo.language : "Text"}
-                                </p>
+                                    {/* Language Display with Fallback */}
+                                    <p className="repoll">
+                                        🖥️ {repo.language ? repo.language : "Text"}
+                                    </p>
 
-                                <a className="repol" href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                                    Github Link <FaLink />
-                                </a>
-                            </div>
-                        ))}
-
-
+                                    <a className="repol" href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                                        Github Link <FaLink />
+                                    </a>
+                                </div>
+                            ))}
                     </div>
                 )}
 
