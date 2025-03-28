@@ -1,57 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { FaCode, FaDatabase, FaRobot, FaGlobe } from "react-icons/fa";
+// import { motion } from "framer-motion";
+// import { FaCode, FaDatabase, FaRobot, FaGlobe } from "react-icons/fa";
 import "./facecard.css";
 import "./projects.css";
 import "./skills.css";
-import {  FaMicrochip } from "react-icons/fa6";
-
-
-const skills = [
-  {
-    category: "Programming Languages",
-    icon: <FaCode className="skill-icon" />, 
-    items: ["C++", "Python", "JavaScript", "SQL"],
-  },{
-    category: "Databases & DevOps",
-    icon: <FaDatabase className="skill-icon" />, 
-    items: ["MongoDB", "MySQL", "Git", "GitHub"],
-  },
-  {
-    category: "AI & Machine Learning",
-    icon: <FaRobot className="skill-icon" />, 
-    items: [
-      "Pandas", "NumPy", "Prompt Engineering", "LLMs & CrewAI",
-      "AI Chatbots", "RAG & Vector Databases"
-    ],
-    },{
-        category: "Web Development",
-        icon: <FaGlobe className="skill-icon" />, 
-        items: [
-        "HTML", "CSS", "JavaScript", "React","Node.js", "Express", "FastAPI", "Flask"
-        ],
-    },
-  
-  
-];
-
+import SkillsOrbit2 from "./SkillsOrbit2";
+// const skills = [{
+//         category: "Web Development",
+//         icon: <FaGlobe className="skill-icon" />, 
+//         items: [
+//         "FastAPI", "Flask"
+//         ],
+//     },];
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [expanded, setExpanded] = useState(null);
-
+  // const [expanded, setExpanded] = useState(null);
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 300);
   }, []);
-
-  const toggleExpand = (index) => {
-    setExpanded(expanded === index ? null : index);
-  };
-
+  // const toggleExpand = (index) => {
+  //   setExpanded(expanded === index ? null : index);
+  // };
   return (
     <div className={`portfolio-container ${isVisible ? "show" : ""}`} id="skills">
-       <div className="pagetitle"> <FaMicrochip/> &nbsp;Skills </div>
-      <div className="skills-container">
-        <h2 className="skills-title">Technical Skills</h2>
+      {/* <div className="pagetitle"> <FaMicrochip/> &nbsp;Skills </div> */}
+      {/* <SkillsOrbit1/> */}
+      <SkillsOrbit2 />
+      {/* <SkillsOrbit3/> */}
+      {/* <h2 className="skills-title"></h2>
         <div className="skills-grid">
           {skills.map((skill, index) => (
             <motion.div
@@ -88,10 +64,9 @@ const Skills = () => {
               )}
             </motion.div>
           ))}
-        </div>
-      </div>
-    
+        </div> */}
     </div>
+    // </div>
   );
 };
 

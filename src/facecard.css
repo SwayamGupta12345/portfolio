@@ -64,6 +64,7 @@ body,
   margin-bottom: 10px;
   transition: transform 0.1s ease-in-out;
 }
+
 .profile-image:hover {
   transform: scale(1.05);
 }
@@ -106,21 +107,21 @@ body,
   transform: scale(1.09);
 }
 
-/* Intro Section */
 .intro-section {
-  max-width: 1000px;
-  min-width: 600px;
-  width: 90%; /* Ensure it uses available width */
+  width: 50%; /* Exactly 50% of the page width */
+  max-width: 300px; /* Prevent it from getting too wide on large screens */
+  min-width: 200px; /* Ensures it doesn't shrink too much on small screens */
   text-align: left;
-  margin: auto 100px;
-  box-sizing: border-box;  /* Include padding in width calculation */
-  padding: 20px;  /* Space around content */
+  margin: 20px auto; /* Center it horizontally */
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 .intro-section p {
   white-space: normal;
-  word-wrap: break-word; /* Allow long words to break */
+  word-wrap: break-word;
   font-size: 16px;
+  line-height: 1.5;
 }
 
 .slogan {
@@ -159,12 +160,11 @@ p {
   transition: all 0.3s ease-in-out;
 
   /* Soft glowing shadow */
-  box-shadow: 0 1px 1px rgba(112, 236, 132, 0.8), 
-              0 1px 1px rgba(255, 255, 255, 0.2) inset;
-
-              opacity: 0;
-              transition: opacity 0.3s ease-in-out;
+  box-shadow: 0 1px 1px rgba(112, 236, 132, 0.8), 0 1px 1px rgba(255, 255, 255, 0.2) inset;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
+
 .navbot.visible {
   opacity: 1;
 }
@@ -172,8 +172,9 @@ p {
 .navbot:hover {
   transform: scale(1.02);
   box-shadow: 0 1px 1px rgba(112, 236, 132, 0.8), 0 2px 2px rgba(255, 255, 255, 0.3) inset;
-  padding:7px 40px;
+  padding: 7px 40px;
 }
+
 .nav-item {
   display: flex;
   align-items: center;
@@ -181,7 +182,6 @@ p {
   cursor: pointer;
   padding: 15px;
 }
-
 
 .nav-item {
   display: flex;
@@ -195,7 +195,7 @@ p {
 }
 
 .nav-item:hover {
-  background: rgba(100, 100, 255, 0.2);
+  background:rgb(53, 71, 56);;
   color: #fff;
   transition: opacity 0.4s ease, transform 0.3s ease;
   padding: 10px 7px;
@@ -205,12 +205,12 @@ p {
 .nav-label {
   font-size: 12px;
   color: white;
-  background: rgba(100, 100, 255, 0.8);
+  background:rgb(76, 182, 94);
   padding: 3px 12px;
   border-radius: 15px;
   opacity: 0;
   transform: scale(0.9);
-  transition: opacity 0.4s ease, transform 0.3s ease;  
+  transition: opacity 0.4s ease, transform 0.3s ease;
 }
 
 .nav-item:hover .nav-label {

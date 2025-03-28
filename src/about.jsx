@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./facecard.css";
-import Face from "./face"
-import Navbot from "./navbot"
-import { IoPersonOutline } from "react-icons/io5";
-
+import SkillsOrbit2 from "./SkillsOrbit2";
 const About = () => {
     const [isVisible, setIsVisible] = useState(false);
     useEffect(() => {
@@ -11,9 +8,7 @@ const About = () => {
     }, []);
     return (
         <div className={`portfolio-container ${isVisible ? "show" : ""}`} id="about">
-            <div className="pagetitle"> <IoPersonOutline /> &nbsp;About </div>
-            {/* <Face /> */}
-            {/* Right Section */}
+            {/* <div className="pagetitle"> <IoPersonOutline /> &nbsp;About </div> */}
             <div className="intro-section">
                 <h1>About Me</h1>
                 <p>
@@ -29,8 +24,8 @@ const About = () => {
                     that enhance productivity.<br /> <br />
                     <span >🚀 Always exploring new tech and open to collaborations!</span>
                 </p>
-
             </div>
+            <SkillsOrbit2 />
         </div>
 
     );
