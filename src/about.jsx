@@ -12,7 +12,7 @@ const About = () => {
     return (
         <div className={`portfolio-container ${isVisible ? "show" : ""}`} id="about">
             <div className="pagetitle"> <IoPersonOutline /> &nbsp;About </div>
-            <Face />
+            {/* <Face /> */}
             {/* Right Section */}
             <div className="intro-section">
                 <h1>About Me</h1>
