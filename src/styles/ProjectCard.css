@@ -63,10 +63,12 @@
 
 .project-description-full {
   flex-grow: 1;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 0.8rem; /* Slightly larger text */
+  line-height: 1.2; /* More spacing between lines */
   overflow-y: auto;
   margin-bottom: 10px;
+  min-height: 50px; /* Increased from 30px */
+  max-height: 150px; /* Ensures it doesn't grow too much */
 }
 
 .project-language {
@@ -171,7 +173,7 @@
 
 .back-button:hover {
   background-color: var(--highlight-color);
-  color: white;
+  transform:scale(1.2);
 }
 
 @media (max-width: 768px) {

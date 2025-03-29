@@ -29,7 +29,7 @@ const ProjectCard = ({ project }) => {
           </div>
           <div className="project-card-actions">
             <button className="info-button" onClick={handleFlip}>
-              <FaInfoCircle /> More Info
+              <FaInfoCircle /> More/Flip
             </button>
           </div>
         </div>

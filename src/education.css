@@ -30,11 +30,11 @@
 .timeline::before {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 20px;
+  bottom: 100px;
   left: 50%;
   width: 3px;
-  background: linear-gradient(180deg,rgb(70, 195, 108),rgb(104, 202, 113));
+  background: linear-gradient(180deg, rgb(70, 195, 108), rgb(104, 202, 113));
   transform: translateX(-50%);
   border-radius: 2px;
 }
@@ -67,11 +67,9 @@
   top: 20px;
   width: 16px;
   height: 16px;
-  background-color: var(--highlight-color);
+  background-color:  rgba(56, 228, 56, 1);
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(56, 228, 56, 1), 
-              0 0 25px rgba(56, 228, 56, 0.8),
-              0 0 35px rgba(56, 228, 56, 0.5);
+  box-shadow: 0 0 15px rgba(56, 228, 56, 1), 0 0 25px rgba(56, 228, 56, 0.8), 0 0 35px rgba(56, 228, 56, 0.5);
 }
 
 /* Alternating Positions */
@@ -86,11 +84,11 @@
 }
 
 .timeline-card:nth-child(odd)::after {
-  right: -35px;
+  right: -48px;
 }
 
 .timeline-card:nth-child(even)::after {
-  left: -35px;
+  left: -48px;
 }
 
 /* Timeline Header */
@@ -140,9 +138,17 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1070px) {
   .timeline::before {
     left: 30px;
+  }
+  /* Section Title (Education Journey) */
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    text-align: center;
   }
 
   .timeline-card {
@@ -154,6 +160,28 @@
   .timeline-card::after {
     left: -45px !important;
   }
+  /* Degree Title */
+  .degree {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 0;
+  }
+
+  /* Institution Name */
+  .institution {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 10px 0;
+  }
+
+  /* Description */
+  .description {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    opacity: 0.7;
+  }
 }
 
 @media (max-width: 480px) {
@@ -161,23 +189,7 @@
     padding: 50px 15px;
   }
 
-  .section-title {
-    font-size: 2rem;
-  }
-
   .timeline-card {
     padding: 15px;
-  }
-
-  .degree {
-    font-size: 1.2rem;
-  }
-
-  .institution {
-    font-size: 1rem;
-  }
-
-  .description {
-    font-size: 0.9rem;
   }
 }
