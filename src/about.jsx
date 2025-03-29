@@ -47,7 +47,7 @@ const About = () => {
   }, [])
 
   return (
-    <div className={`portfolio-container about-section ${isVisible ? "show" : ""}`} id="about">
+    <div className={`portfolio-container  about-section  ${isVisible ? "show" : ""}`} id="about">
       <div className="about-content">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,6 @@ const About = () => {
             <span>🚀 Always exploring new tech and open to collaborations!</span>
           </p>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -86,6 +85,7 @@ const About = () => {
         >
           <SkillsOrbit2 />
         </motion.div>
+       
         
       </div>
       

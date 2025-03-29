@@ -11,6 +11,15 @@ const Skills = () => {
 
   const skillCategories = [
     {
+      category: "Programming",
+      icon: <FaCode className="category-icon" />,
+      skills: [
+        { name: "C / C++", level: 90 },
+        { name: "Python", level: 85 },
+        { name: "Go lang", level: 70 },
+        { name: "Php", level: 85 },
+      ],
+    },{
       category: "Frontend Development",
       icon: <FaCode className="category-icon" />,
       skills: [

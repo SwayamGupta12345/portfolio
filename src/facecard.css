@@ -87,7 +87,7 @@ body,
   border-radius: 20px;
   text-align: center;
   max-width: 500px;
-  min-width: 350px;
+  min-width: 450px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--card-border);
   margin: auto;
@@ -406,8 +406,10 @@ p {
     padding: 30px;
   }
 
+
   .profile-card {
     text: 1rem; /* Adjusted font size */
+    min-width: 400px;
   }
 
   .profile-card h2 {

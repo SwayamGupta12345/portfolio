@@ -17,7 +17,7 @@
   background-color: var(--bg-tertiary);
   border-radius: 50%;
   box-shadow: 0px 8px 20px var(--shadow-color);
-  right: 50px;
+  /* right: 50px; */
   transition: all var(--transition-speed);
 }
 
@@ -112,7 +112,12 @@
     height: 28px;
   }
 }
-
+@media(max-width:630px){
+  .orbit-container{
+    position:relative;
+    transform: translate(0%, -50%); 
+  }
+}
 @media (max-width: 480px) {
   .orbit-container {
     width: 250px;

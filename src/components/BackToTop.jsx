@@ -30,8 +30,12 @@ const BackToTop = () => {
   return (
 
     <button className={`back-to-top ${isVisible ? "visible" : ""}`} onClick={scrollToTop} aria-label="Back to top">
-      <FiArrowUp color="white" />
-    </button>
+  <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+    <FiArrowUp size={24} style={{ color: "white" }} />
+    
+  </span>
+</button>
+
 
   )
 }
