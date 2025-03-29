@@ -34,7 +34,7 @@
   bottom: 0;
   left: 50%;
   width: 3px;
-  background: linear-gradient(180deg, #00ff88, #007bff);
+  background: linear-gradient(180deg,rgb(70, 195, 108),rgb(104, 202, 113));
   transform: translateX(-50%);
   border-radius: 2px;
 }

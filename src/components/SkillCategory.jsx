@@ -29,11 +29,13 @@ const SkillCategory = ({ category, icon, skills }) => {
             <div className="skill-bar-container">
               <motion.div
                 className="skill-bar"
-                key={skill.name} // Ensure animation resets when data changes
+                key={skill.name}
                 initial={{ width: "0%" }}
-                animate={{ width: `${skill.level}%` }}
+                whileInView={{ width: `${skill.level}%` }}
+                viewport={{ once: false }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
               ></motion.div>
+
             </div>
           </motion.div>
         ))}
