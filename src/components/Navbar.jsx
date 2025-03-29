@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { IoHome, IoPerson } from "react-icons/io5"
 import { FaGraduationCap, FaMicrochip, FaBarsProgress } from "react-icons/fa6"
 import { MdEmail, MdClose } from "react-icons/md"
