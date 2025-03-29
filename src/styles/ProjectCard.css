@@ -83,7 +83,7 @@
 }
 
 .info-button {
-  background-color: var(--highlight-color);
+  background-color: var(--accent-primary);
   color: white;
   border: none;
   padding: 8px 15px;
@@ -99,6 +99,7 @@
 .info-button:hover {
   background-color: var(--button-hover);
   transform: scale(1.05);
+  
 }
 
 .tech-stack {

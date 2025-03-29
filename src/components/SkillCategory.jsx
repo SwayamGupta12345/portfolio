@@ -1,6 +1,6 @@
-"use client"
-import { motion } from "framer-motion"
-import "../styles/SkillCategory.css"
+"use client";
+import { motion } from "framer-motion";
+import "../styles/SkillCategory.css";
 
 const SkillCategory = ({ category, icon, skills }) => {
   return (
@@ -8,7 +8,7 @@ const SkillCategory = ({ category, icon, skills }) => {
       className="skill-category"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.2 }} // Trigger when at least 20% visible
       transition={{ duration: 0.5 }}
     >
       <div className="skill-category-header">
@@ -22,25 +22,24 @@ const SkillCategory = ({ category, icon, skills }) => {
             className="skill-item"
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.3, delay: index * 0.1 }}
           >
             <div className="skill-name">{skill.name}</div>
             <div className="skill-bar-container">
               <motion.div
                 className="skill-bar"
-                initial={{ width: 0 }}
-                whileInView={{ width: `${skill.level}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                key={skill.name} // Ensure animation resets when data changes
+                initial={{ width: "0%" }}
+                animate={{ width: `${skill.level}%` }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
               ></motion.div>
             </div>
           </motion.div>
         ))}
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default SkillCategory
-
+export default SkillCategory;

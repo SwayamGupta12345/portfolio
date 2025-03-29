@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { FiArrowUp } from "react-icons/fi"
+import { FiArrowUp } from "react-icons/fi";
 import "../styles/BackToTop.css"
 
 const BackToTop = () => {
@@ -28,9 +28,11 @@ const BackToTop = () => {
   }
 
   return (
+
     <button className={`back-to-top ${isVisible ? "visible" : ""}`} onClick={scrollToTop} aria-label="Back to top">
-      <FiArrowUp />
+      <FiArrowUp color="white" />
     </button>
+
   )
 }
 

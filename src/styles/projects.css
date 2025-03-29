@@ -5,10 +5,10 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  padding: 60px 20px;
+  padding: 80px 20px;
   width: 100%;
   max-width: 1200px;
-  margin: 0px auto;
+  margin:40px 20px;
   margin-bottom:40px;
   min-height: 100vh; /* Ensures it grows dynamically */
 }

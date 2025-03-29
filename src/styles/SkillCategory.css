@@ -49,7 +49,7 @@
 
 .skill-bar-container {
   height: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(84, 179, 70, 1);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -74,3 +74,32 @@
   }
 }
 
+.skill-category {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border: 1px solid var(--card-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 200px; /* Ensures viewport detection */
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skill-bar-container {
+  height: 8px;
+  background-color: rgb(50, 53, 49);
+  border-radius: 4px;
+  overflow: hidden; /* Ensures animation stays inside */
+}
+
+.skill-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--highlight-color), #4caf50);
+  border-radius: 4px;
+  width: 0; /* Default to 0 */
+}

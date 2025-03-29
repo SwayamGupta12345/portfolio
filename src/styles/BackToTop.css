@@ -5,7 +5,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--accent-primary);
+  background-color: #007bff; /* Permanent Blue */
   color: white;
   display: flex;
   align-items: center;
@@ -15,10 +15,10 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: all 0.3s ease-in-out;
   border: none;
-  box-shadow: 0 4px 15px var(--shadow-color);
-  z-index: 99;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
 .back-to-top.visible {
@@ -29,14 +29,14 @@
 
 .back-to-top:hover {
   transform: translateY(-5px);
-  background-color: var(--button-hover);
-  box-shadow: 0 6px 20px var(--shadow-color);
+  background-color: #0056b3; /* Darker Blue on Hover */
 }
 
 .back-to-top:active {
   transform: scale(0.95);
 }
 
+/* Mobile Optimization */
 @media (max-width: 768px) {
   .back-to-top {
     width: 40px;
@@ -46,4 +46,9 @@
     right: 20px;
   }
 }
-
+.back-to-top svg {
+  color: white; /* Ensures icon color is white */
+  width: 24px;
+  height: 24px;
+  z-index: 100000;
+}

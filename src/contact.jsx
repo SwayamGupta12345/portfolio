@@ -2,19 +2,18 @@ import React, { useState, useEffect } from "react";
 import "./facecard.css";
 import { LuSend } from "react-icons/lu";
 import Face from "./face";
-
-// import "./contact.css"
-import "../src/styles/contact.css"
-import emailjs from "@emailjs/browser";  // Import EmailJS
+import "../src/styles/contact.css";
+import emailjs from "@emailjs/browser";
 import { MdOutlineEmail } from "react-icons/md";
+
 const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const [showFace, setShowFace] = useState(window.innerWidth >= 720);
     const [formData, setFormData] = useState({
-
         name: "",
         email: "",
         subject: "",
@@ -23,6 +22,13 @@ const Contact = () => {
 
     useEffect(() => {
         setTimeout(() => setIsVisible(true), 300);
+
+        const handleResize = () => {
+            setShowFace(window.innerWidth >= 1026);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     const handleChange = (e) => {
@@ -52,7 +58,10 @@ const Contact = () => {
     return (
         <div className={`portfolio-container ${isVisible ? "show" : ""}`} id="contact">
              <div className="pagetitle"> <MdOutlineEmail /> &nbsp;Contact me </div>
-            <Face />
+            
+            {/* Conditionally render Face component */}
+            {showFace && <Face />}
+
             <div className="intro-section">
                 <h1>Contact <span className="highlight">Me</span></h1>
                 <p>Feel free to reach out for any inquiries or collaborations.</p>
@@ -69,7 +78,6 @@ const Contact = () => {
                         </button>
                     </form>
                 </div>
-            
             </div>
         </div>
     );

@@ -63,7 +63,7 @@ const Navbar = () => {
     <>
       <nav className={`navbar ${isVisible ? "visible" : ""} ${scrolled ? "scrolled" : ""}`}>
         <div className="logo">
-          <span>SG</span>
+          <span>Swayam Gupta</span>
         </div>
 
         <div className={`nav-links ${mobileMenuOpen ? "active" : ""}`}>

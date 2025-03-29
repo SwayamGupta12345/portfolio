@@ -129,8 +129,8 @@ function App() {
         <Facecard />
         <About />
         <Education />
-        <Projects />
         <Skills/>
+        <Projects />
         <Contact />
         <BackToTop />
       </div>
