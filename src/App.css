@@ -1,32 +1,10 @@
-html, body, #root {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column; /* Ensures elements stack vertically */
-    justify-content: flex-start; /* Aligns content to the top */
-    align-items: center;
-    background-color: #121212 !important;
-    font-family: Arial, sans-serif;
-}
-
-
-.main-content {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #121212 !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
+/*  */
 
 html,
 body,
 #root {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   margin: 0;
   padding: 0;
   display: flex;
@@ -42,7 +20,7 @@ body,
 
 .main-content {
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,10 +159,10 @@ body,
   font-family: "Inter", Arial, sans-serif;
   scroll-behavior: smooth;
 }
-
 .main-content {
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; Keeps it at least full-screen */
+  height: auto; /* Allows it to expand beyond 100vh if needed */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -202,7 +180,7 @@ body,
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   padding: 40px;
-  min-height: 85vh;
+  /* min-height: 85vh; */
   box-shadow: 0 10px 30px var(--shadow-color);
   border-radius: 20px;
   margin: 40px 0;

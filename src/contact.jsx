@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./facecard.css";
 import { LuSend } from "react-icons/lu";
 import Face from "./face";
-import Navbot from "./navbot";
-import "./contact.css"
+
+// import "./contact.css"
+import "../src/styles/contact.css"
 import emailjs from "@emailjs/browser";  // Import EmailJS
 import { MdOutlineEmail } from "react-icons/md";
 const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;

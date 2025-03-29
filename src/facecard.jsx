@@ -104,7 +104,6 @@ const Facecard = () => {
           <div className="mouse">
             <div className="wheel"></div>
           </div>
-          <div className="scroll-text">Scroll Down</div>
         </div>
       </motion.div>
     </div>

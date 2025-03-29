@@ -119,6 +119,7 @@ import Contact from "./contact"
 import Navbar from "./components/Navbar"
 import BackToTop from "./components/BackToTop"
 import { ThemeProvider } from "./utils/ThemeContext"
+import Skills from "./skills"
 
 function App() {
   return (
@@ -129,6 +130,7 @@ function App() {
         <About />
         <Education />
         <Projects />
+        <Skills/>
         <Contact />
         <BackToTop />
       </div>

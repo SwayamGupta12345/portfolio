@@ -78,7 +78,7 @@ import "./skills.css"
 import { FaCode, FaDatabase, FaServer, FaTools, FaMobileAlt } from "react-icons/fa"
 import { motion } from "framer-motion"
 import SkillCategory from "./components/SkillCategory"
-
+import "../src/styles/SkillCategory.css"
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false)
 
