@@ -1,222 +1,183 @@
-/* .education-section {
-    max-width: 1000px;
-    min-width:600px;
-    text-align: left;
-    margin:  auto;
-    
-}
-.tag{
-    font-size:2.3rem;
-}
-
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.timeline-card {
-    background: #1e1e2f;
-    padding: 10px;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 5px solid #4caf50;
-    font-size:12px;
-    min-width:20dvw;
-    max-width:65dvw;
-}
-
-.timeline-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 5px 15px rgba(0, 255, 127, 0.3);
-}
-
-.timeline-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin:5px 10px 10px 0px;
-}
-.degree{
-    font-size:1.25rem;
-}
-.timeline-year {
-    background: #4caf50;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-.institution {
-    margin-top:5px;
-    color: #9c9c9c;
-    font-size: 0.90rem;
-}
-
-.description {
-    margin-top: 10px;
-    font-size: 0.75rem;
-    color: #d4d4d4;
-    opacity: 0.8;
-} */
+/* Education Section Container */
 .education-container {
-    position: relative;
-    overflow: hidden;
-    padding: 60px 40px;
-  }
-  
-  .timeline {
-    position: relative;
-    max-width: 1000px;
-    margin: 40px auto 0;
-    padding: 20px 0;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 80px 20px;
+}
+
+/* Section Title (Education Journey) */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Vertical Timeline Line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(180deg, #00ff88, #007bff);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+
+/* Timeline Card */
+.timeline-card {
+  position: relative;
+  width: 60%;
+  margin-bottom: 50px;
+  padding: 25px;
+  border-radius: 12px;
+  background-color: var(--card-bg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--card-border);
+  text-align: left;
+}
+
+/* Hover Effect */
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Connector Dots - Enhanced Glow */
+.timeline-card::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--highlight-color);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(56, 228, 56, 1), 
+              0 0 25px rgba(56, 228, 56, 0.8),
+              0 0 35px rgba(56, 228, 56, 0.5);
+}
+
+/* Alternating Positions */
+.timeline-card:nth-child(odd) {
+  left: -15%;
+  text-align: right;
+}
+
+.timeline-card:nth-child(even) {
+  left: 55%;
+  text-align: left;
+}
+
+.timeline-card:nth-child(odd)::after {
+  right: -35px;
+}
+
+.timeline-card:nth-child(even)::after {
+  left: -35px;
+}
+
+/* Timeline Header */
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Year Pill */
+.timeline-year {
+  background-color: var(--highlight-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  min-width: 130px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Degree Title */
+.degree {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Institution Name */
+.institution {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin: 10px 0;
+}
+
+/* Description */
+.description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .timeline::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 3px;
-    background-color: var(--highlight-color);
-    transform: translateX(-50%);
+    left: 30px;
   }
-  
+
   .timeline-card {
-    position: relative;
-    width: 45%;
-    margin-bottom: 50px;
-    padding: 25px;
-    border-radius: 12px;
-    background-color: var(--card-bg);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--card-border);
+    width: calc(100% - 60px);
+    left: 60px !important;
+    text-align: left !important;
   }
-  
-  .timeline-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-  }
-  
+
   .timeline-card::after {
-    content: "";
-    position: absolute;
-    top: 20px;
-    width: 20px;
-    height: 20px;
-    background-color: var(--highlight-color);
-    border-radius: 50%;
+    left: -45px !important;
   }
-  
-  /* Alternating positions */
-  .timeline-card:nth-child(odd) {
-    left: 0;
-    text-align: right;
+}
+
+@media (max-width: 480px) {
+  .education-container {
+    padding: 50px 15px;
   }
-  
-  .timeline-card:nth-child(even) {
-    left: 55%;
-    text-align: left;
+
+  .section-title {
+    font-size: 2rem;
   }
-  
-  .timeline-card:nth-child(odd)::after {
-    right: -60px;
+
+  .timeline-card {
+    padding: 15px;
   }
-  
-  .timeline-card:nth-child(even)::after {
-    left: -60px;
-  }
-  
-  .timeline-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .timeline-card:nth-child(odd) .timeline-header {
-    flex-direction: row-reverse;
-  }
-  
-  .timeline-year {
-    background-color: var(--highlight-color);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin: 0 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
+
   .degree {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    margin: 0;
+    font-size: 1.2rem;
   }
-  
+
   .institution {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    opacity: 0.8;
-    margin: 10px 0;
+    font-size: 1rem;
   }
-  
+
   .description {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text-color);
-    opacity: 0.7;
+    font-size: 0.9rem;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .timeline::before {
-      left: 30px;
-    }
-  
-    .timeline-card {
-      width: calc(100% - 80px);
-      left: 80px !important;
-      text-align: left !important;
-    }
-  
-    .timeline-card::after {
-      left: -50px !important;
-    }
-  
-    .timeline-card .timeline-header {
-      flex-direction: row !important;
-    }
-  
-    .timeline-year {
-      margin-left: 0;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .education-container {
-      padding: 40px 20px;
-    }
-  
-    .timeline-card {
-      padding: 15px;
-    }
-  
-    .degree {
-      font-size: 1.2rem;
-    }
-  
-    .institution {
-      font-size: 1rem;
-    }
-  
-    .description {
-      font-size: 0.9rem;
-    }
-  }
-  
-  
+}
