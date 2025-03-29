@@ -71,7 +71,7 @@
 .nav-item:hover,
 .nav-item.active {
   background-color: rgba(76, 182, 94, 0.15);
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
 }
 
 .nav-item::after {
@@ -88,7 +88,7 @@
 
 .nav-item:hover::after,
 .nav-item.active::after {
-  width: 70%;
+  width: 100%;
 }
 
 .nav-icon {
