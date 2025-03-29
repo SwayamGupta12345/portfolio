@@ -1,0 +1,181 @@
+.project-card-container {
+  perspective: 1000px;
+  width: 300px;
+  height: 280px;
+  margin: 15px;
+  transition: transform 0.3s ease;
+}
+
+.project-card-container:hover {
+  transform: translateY(-10px);
+}
+
+.project-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.project-card-container.flipped .project-card-inner {
+  transform: rotateY(180deg);
+}
+
+.project-card-front,
+.project-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-color);
+}
+
+.project-card-back {
+  transform: rotateY(180deg);
+}
+
+.project-card-front h3,
+.project-card-back h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--highlight-color);
+}
+
+.project-description {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.project-description-full {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.project-language {
+  margin: 10px 0;
+  font-size: 0.85rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.project-card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.info-button {
+  background-color: var(--highlight-color);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.info-button:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+}
+
+.tech-stack {
+  margin: 10px 0;
+}
+
+.tech-stack h4 {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tech-tag {
+  background-color: rgba(76, 182, 94, 0.2);
+  color: var(--highlight-color);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-link.github {
+  background-color: #333;
+  color: white;
+}
+
+.project-link.demo {
+  background-color: var(--highlight-color);
+  color: white;
+}
+
+.project-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+  background: none;
+  border: 1px solid var(--highlight-color);
+  color: var(--highlight-color);
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+
+.back-button:hover {
+  background-color: var(--highlight-color);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .project-card-container {
+    width: 280px;
+  }
+}
+

@@ -1,84 +1,175 @@
-import React, { useState, useEffect } from "react";
-import "./facecard.css";
-import "./projects.css";
-import Navbot from "./navbot";
-import { FaLink } from "react-icons/fa";
-import { FaBarsProgress } from "react-icons/fa6";
+"use client"
 
-
+import { useState, useEffect } from "react"
+import "./projects.css"
+import ProjectCard from "./components/ProjectCard"
+import ProjectFilter from "./components/ProjectFilter"
+import { motion } from "framer-motion"
 
 const Projects = () => {
-    const [isVisible, setIsVisible] = useState(false);
-    const [repos, setRepos] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const [isVisible, setIsVisible] = useState(false)
+  const [repos, setRepos] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [activeCategory, setActiveCategory] = useState("All")
+  const [filteredRepos, setFilteredRepos] = useState([])
 
-    useEffect(() => {
-        setTimeout(() => setIsVisible(true), 300); // Smooth effect
+  // Define project categories
+  const categories = ["All", "Web", "API", "AI/ML", "Tools"]
 
-        // Fetch GitHub Repositories
-        fetch("https://api.github.com/users/SwayamGupta12345/repos")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Failed to fetch repositories.");
-                }
-                return response.json();
-            })
-            .then(data => {
-                const sortedRepos = data.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-                setRepos(sortedRepos.slice(0, 6)); // Show latest 6 repos
-                setLoading(false);
-            })
-            .catch(error => {
-                console.error("Error fetching repositories:", error);
-                setError(error.message);
-                setLoading(false);
-            });
+  // Map GitHub topics to our categories
+  const topicToCategory = {
+    react: "Web",
+    nextjs: "Web",
+    javascript: "Web",
+    typescript: "Web",
+    html: "Web",
+    css: "Web",
+    api: "API",
+    "rest-api": "API",
+    fastapi: "API",
+    express: "API",
+    flask: "API",
+    "machine-learning": "AI/ML",
+    ai: "AI/ML",
+    "deep-learning": "AI/ML",
+    python: "AI/ML",
+    tensorflow: "AI/ML",
+    pytorch: "AI/ML",
+    tool: "Tools",
+    utility: "Tools",
+    cli: "Tools",
+    automation: "Tools",
+  }
 
-    }, []);
-    const excludedRepos = ["portfolio"]; // Add more repo names here if needed
+  // Function to determine category based on repo data
+  const determineCategory = (repo) => {
+    // Check if repo has topics that match our categories
+    if (repo.topics && repo.topics.length > 0) {
+      for (const topic of repo.topics) {
+        if (topicToCategory[topic]) {
+          return topicToCategory[topic]
+        }
+      }
+    }
 
-    return (
-        <div className={`portfolio-container ${isVisible ? "show" : ""}`} id="projects">
-            <div className="pagetitle"> <FaBarsProgress /> &nbsp;Projects </div>
-            {/* Right Section */}
-            <div className="intro-section">
+    // Fallback to language-based categorization
+    if (repo.language) {
+      if (["JavaScript", "TypeScript", "HTML", "CSS"].includes(repo.language)) {
+        return "Web"
+      } else if (["Python", "Jupyter Notebook"].includes(repo.language)) {
+        return "AI/ML"
+      }
+    }
 
-                {/* GitHub Projects */}
-                <h2 className="projects-title">My Projects</h2>
+    // Default category
+    return "Tools"
+  }
 
-                {loading && <p>Loading projects...</p>}
-                {error && <p className="error-message">{error}</p>}
+  useEffect(() => {
+    setTimeout(() => setIsVisible(true), 300)
 
-                {!loading && !error && (
+    // Fetch GitHub Repositories with topics
+    fetch("https://api.github.com/users/SwayamGupta12345/repos")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch repositories.")
+        }
+        return response.json()
+      })
+      .then((data) => {
+        // Sort by updated date and add category
+        const processedRepos = data
+          .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+          .filter((repo) => repo.name.toLowerCase() !== "portfolio") // Exclude portfolio repo
+          .map((repo) => ({
+            ...repo,
+            category: determineCategory(repo),
+          }))
 
+        setRepos(processedRepos)
+        setFilteredRepos(processedRepos)
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.error("Error fetching repositories:", error)
+        setError(error.message)
+        setLoading(false)
+      })
+  }, [])
 
-                    <div className="projects-grid">
-                        {repos
-                            .filter(repo => !excludedRepos.includes(repo.name.toLowerCase())) // Exclude specified repos
-                            .map(repo => (
-                                <div key={repo.id} className="project-card">
-                                    <h3>{repo.name}</h3>
-                                    <p className="desc">
-                                        {repo.description ? repo.description.split(" ").slice(0, 10).join(" ") + "..." : "No description available."}
-                                    </p>
+  // Filter repos when category changes
+  useEffect(() => {
+    if (activeCategory === "All") {
+      setFilteredRepos(repos)
+    } else {
+      setFilteredRepos(repos.filter((repo) => repo.category === activeCategory))
+    }
+  }, [activeCategory, repos])
 
-                                    {/* Language Display with Fallback */}
-                                    <p className="repoll">
-                                        🖥️ {repo.language ? repo.language : "Text"}
-                                    </p>
+  return (
+    <div className={`portfolio-container projects-container ${isVisible ? "show" : ""}`} id="projects">
+      <motion.h2
+        className="section-title"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        My Projects
+      </motion.h2>
 
-                                    <a className="repol" href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                                        Github Link <FaLink />
-                                    </a>
-                                </div>
-                            ))}
-                    </div>
-                )}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <ProjectFilter categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+      </motion.div>
 
-            </div>
+      {loading && (
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <p>Loading projects...</p>
         </div>
-    );
-};
+      )}
 
-export default Projects;
+      {error && (
+        <div className="error-message">
+          <p>{error}</p>
+          <button onClick={() => window.location.reload()}>Try Again</button>
+        </div>
+      )}
+
+      {!loading && !error && (
+        <motion.div
+          className="projects-grid"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          {filteredRepos.length > 0 ? (
+            filteredRepos.map((repo, index) => (
+              <motion.div
+                key={repo.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <ProjectCard project={repo} />
+              </motion.div>
+            ))
+          ) : (
+            <p className="no-projects">No projects found in this category.</p>
+          )}
+        </motion.div>
+      )}
+    </div>
+  )
+}
+
+export default Projects
+

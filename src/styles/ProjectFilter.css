@@ -1,0 +1,45 @@
+.project-filter {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filter-button {
+  background: none;
+  border: 1px solid var(--highlight-color);
+  color: var(--text-color);
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: rgba(76, 182, 94, 0.1);
+  transform: translateY(-2px);
+}
+
+.filter-button.active {
+  background-color: var(--highlight-color);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .filter-buttons {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .filter-button {
+    white-space: nowrap;
+  }
+}
+

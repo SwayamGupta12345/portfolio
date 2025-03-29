@@ -6,7 +6,7 @@ const navItems = [
     { id: "home", icon: <IoHome />, label: "Home" },
     { id: "about", icon: <IoPerson />, label: "About" },
     { id: "education", icon: <FaGraduationCap />, label: "Education" },
-    { id: "skills", icon: <FaMicrochip />, label: "Skills" },
+    // { id: "skills", icon: <FaMicrochip />, label: "Skills" },
     { id: "projects", icon: <FaBarsProgress />, label: "Projects" },
     { id: "contact", icon: <MdEmail />, label: "Contact" }
 ];
