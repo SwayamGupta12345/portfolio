@@ -71,7 +71,7 @@ const SkillsOrbit2 = () => {
             } else {
                 // Desktops
                 setRadius1(120);
-                setRadius2(200);
+                setRadius2(220);
             }
         };
 

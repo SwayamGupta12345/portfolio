@@ -86,7 +86,9 @@ const About = () => {
         >
           <SkillsOrbit2 />
         </motion.div>
+        
       </div>
+      
     </div>
   )
 }
