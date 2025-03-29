@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import "./projects.css"
+import "../src/styles/projects.css"
 import ProjectCard from "./components/ProjectCard"
 import ProjectFilter from "./components/ProjectFilter"
 import { motion } from "framer-motion"
@@ -108,66 +108,131 @@ const Projects = () => {
   }, [activeCategory, repos])
 
   return (
-    <div className={`portfolio-container projects-container ${isVisible ? "show" : ""}`} id="projects">
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        My Projects
-      </motion.h2>
+    // <div className={`portfolio-container projects-container ${isVisible ? "show" : ""}`} id="projects">
+    //   <motion.h2
+    //     className="section-title"
+    //     initial={{ opacity: 0, y: 20 }}
+    //     whileInView={{ opacity: 1, y: 0 }}
+    //     viewport={{ once: true }}
+    //     transition={{ duration: 0.5 }}
+    //   >
+    //     My Projects
+    //   </motion.h2>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <ProjectFilter categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
-      </motion.div>
+    //   <motion.div
+    //     initial={{ opacity: 0, y: 20 }}
+    //     whileInView={{ opacity: 1, y: 0 }}
+    //     viewport={{ once: true }}
+    //     transition={{ duration: 0.5, delay: 0.2 }}
+    //   >
+    //     <ProjectFilter categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+    //   </motion.div>
 
-      {loading && (
-        <div className="loading-container">
-          <div className="loading-spinner"></div>
-          <p>Loading projects...</p>
+    //   {loading && (
+    //     <div className="loading-container">
+    //       <div className="loading-spinner"></div>
+    //       <p>Loading projects...</p>
+    //     </div>
+    //   )}
+
+    //   {error && (
+    //     <div className="error-message">
+    //       <p>{error}</p>
+    //       <button onClick={() => window.location.reload()}>Try Again</button>
+    //     </div>
+    //   )}
+
+    //   {!loading && !error && (
+    //     <motion.div
+    //       className="projects-grid"
+    //       initial={{ opacity: 0 }}
+    //       whileInView={{ opacity: 1 }}
+    //       viewport={{ once: true }}
+    //       transition={{ duration: 0.5, delay: 0.3 }}
+    //     >
+    //       {filteredRepos.length > 0 ? (
+    //         filteredRepos.map((repo, index) => (
+    //           <motion.div
+    //             key={repo.id}
+    //             initial={{ opacity: 0, y: 20 }}
+    //             whileInView={{ opacity: 1, y: 0 }}
+    //             viewport={{ once: true }}
+    //             transition={{ duration: 0.5, delay: index * 0.1 }}
+    //           >
+    //             <ProjectCard project={repo} />
+    //           </motion.div>
+    //         ))
+    //       ) : (
+    //         <p className="no-projects">No projects found in this category.</p>
+    //       )}
+    //     </motion.div>
+    //   )}
+    // </div>
+    
+      <div className={`portfolio-container projects-container ${isVisible ? "show" : ""}`} id="projects">
+        <div className="projects-header">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            My Projects
+          </motion.h2>
+    
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <ProjectFilter categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+          </motion.div>
         </div>
-      )}
-
-      {error && (
-        <div className="error-message">
-          <p>{error}</p>
-          <button onClick={() => window.location.reload()}>Try Again</button>
-        </div>
-      )}
-
-      {!loading && !error && (
-        <motion.div
-          className="projects-grid"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          {filteredRepos.length > 0 ? (
-            filteredRepos.map((repo, index) => (
-              <motion.div
-                key={repo.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <ProjectCard project={repo} />
-              </motion.div>
-            ))
-          ) : (
-            <p className="no-projects">No projects found in this category.</p>
-          )}
-        </motion.div>
-      )}
-    </div>
+    
+        {loading && (
+          <div className="loading-container">
+            <div className="loading-spinner"></div>
+            <p>Loading projects...</p>
+          </div>
+        )}
+    
+        {error && (
+          <div className="error-message">
+            <p>{error}</p>
+            <button onClick={() => window.location.reload()}>Try Again</button>
+          </div>
+        )}
+    
+        {!loading && !error && (
+          <motion.div
+            className="projects-grid"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            {filteredRepos.length > 0 ? (
+              filteredRepos.map((repo, index) => (
+                <motion.div
+                  key={repo.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <ProjectCard project={repo} />
+                </motion.div>
+              ))
+            ) : (
+              <p className="no-projects">No projects found in this category.</p>
+            )}
+          </motion.div>
+        )}
+      </div>
+    
+    
   )
 }
 
