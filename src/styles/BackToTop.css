@@ -30,7 +30,7 @@
 
 .back-to-top:hover {
   transform: translateY(-5px);
-  background-color: #0056b3; /* Darker Blue on Hover */
+  background-color:var(--accent-primary); /* Darker Blue on Hover */
 }
 
 .back-to-top:active {
