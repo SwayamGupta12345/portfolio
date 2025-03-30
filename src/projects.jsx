@@ -13,7 +13,7 @@ const Projects = () => {
   const [error, setError] = useState(null)
   const [activeCategory, setActiveCategory] = useState("All")
   const [filteredRepos, setFilteredRepos] = useState([])
-
+  const excludedRepos = ["portfolio", "SwayamGupta12345"];
   // Define project categories
   const categories = ["All", "Web", "API", "AI/ML", "Tools"]
 
@@ -81,7 +81,7 @@ const Projects = () => {
         // Sort by updated date and add category
         const processedRepos = data
           .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-          .filter((repo) => repo.name.toLowerCase() !== "portfolio") // Exclude portfolio repo
+          .filter((repo) => !excludedRepos.includes(repo.name))
           .map((repo) => ({
             ...repo,
             category: determineCategory(repo),
