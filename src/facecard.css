@@ -40,17 +40,17 @@ body,
   overflow: hidden;
 }
 
-/* .hero-section::before {
+.hero-section::before {
   content: "";
   position: absolute;
   top: -50px;
   right: -50px;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(76, 182, 94, 0.2) 0%, rgba(76, 182, 94, 0) 70%);
   z-index: 0;
-} */
+}
 
 .hero-section::after {
   content: "";
