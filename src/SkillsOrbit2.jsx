@@ -4,7 +4,7 @@ import {
 } from "react-icons/fa";
 import {
     SiMongodb, SiExpress, SiTypescript, SiNextdotjs, SiTailwindcss,
-    SiCplusplus, SiGo, SiOllama, SiFlask, SiFastapi
+    SiCplusplus, SiGo, SiOllama, SiFlask, SiFastapi,SiC
 } from "react-icons/si";
 import { DiMysql, DiPhp } from "react-icons/di";
 import { TbLetterC } from "react-icons/tb"; // Better C icon
@@ -12,7 +12,7 @@ import "./SkillsOrbit.css";
 import "./styles/theme.css"
 
 const skills = [
-    { icon: <TbLetterC color="#A8B9CC" /> }, // C
+    { icon: <SiC color="#A8B9CC" /> }, // C
     { icon: <SiCplusplus color="#00599C" /> }, // C++
     { icon: <SiGo color="#00ADD8" /> }, // Go
     { icon: <FaPython color="#3776AB" /> }, // Python
