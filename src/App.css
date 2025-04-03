@@ -135,6 +135,7 @@ body {
 @media (max-width: 768px) {
   .main-content {
     padding-top: 60px;
+    background-color: var(--bg-color);
   }
 
   .section-title {
@@ -227,6 +228,7 @@ body,
 @media (max-width: 768px) {
   .main-content {
     padding-top: 60px;
+    background-color: var(--bg-color);
   }
 
   .portfolio-container {
