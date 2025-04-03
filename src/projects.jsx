@@ -25,6 +25,7 @@ const Projects = () => {
     typescript: "Web",
     html: "Web",
     css: "Web",
+    php:"Web",
     api: "API",
     "rest-api": "API",
     fastapi: "API",

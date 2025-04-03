@@ -1,6 +1,6 @@
 .about-section {
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
   height:800px;
 }
 
@@ -103,8 +103,18 @@
   }
 }
   
-@media(max-width:400px){
+@media(max-width:410px){
   .about-section {
-    height:850px;
+    height:860px;
+  }
+}
+@media(max-width:330px){
+  .about-section {
+    height:930px;
+  }
+}
+@media(max-width:278px){
+  .about-section {
+    height:1000px;
   }
 }

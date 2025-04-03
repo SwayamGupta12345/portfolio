@@ -69,7 +69,7 @@ const Facecard = () => {
         className="intro-section"
       >
         <h1 className="greeting">
-          Hello There, I'm <span className="highlight name-highlight">Swayam</span>,
+          Hello There, I'm <span className="highlight name-highlight">Swayam</span>
         </h1>
 {/* 
         <h2 className="profession">
