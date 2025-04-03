@@ -1,6 +1,6 @@
 // "use client"
 
-// import { useState, useEffect, useContext } from "react"
+// import { useState, useEffect } from "react"
 // import { IoHome, IoPerson } from "react-icons/io5"
 // import { FaGraduationCap, FaMicrochip, FaBarsProgress } from "react-icons/fa6"
 // import { MdEmail, MdClose } from "react-icons/md"
@@ -27,36 +27,35 @@
 //     setTimeout(() => setIsVisible(true), 300)
 
 //     const handleScroll = () => {
-//       const scrollPosition = window.scrollY
-//       setScrolled(scrollPosition > 50)
+//       const scrollPosition = window.scrollY + window.innerHeight * 0.4; // Adjust threshold
 
-//       // Determine active section based on scroll position
-//       const sections = navItems.map((item) => item.id)
-//       for (const section of sections.reverse()) {
-//         const element = document.getElementById(section)
-//         if (element) {
-//           const rect = element.getBoundingClientRect()
-//           if (rect.top <= 150) {
-//             setActiveSection(section)
-//             break
+//       let newActiveSection = "home"; // Default to home
+
+//       navItems.forEach(({ id }) => {
+//         const section = document.getElementById(id);
+//         if (section) {
+//           const sectionTop = section.offsetTop - 100; // Offset to detect earlier
+//           const sectionHeight = section.offsetHeight;
+
+//           if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+//             newActiveSection = id;
 //           }
 //         }
-//       }
-//     }
+//       });
 
-//     window.addEventListener("scroll", handleScroll)
-//     return () => window.removeEventListener("scroll", handleScroll)
-//   }, [])
+//       setActiveSection(newActiveSection);
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []); // Run on mount
 
 //   const scrollToSection = (id) => {
-//     if (id === "home") {
-//       window.scrollTo({ top: 0, behavior: "smooth" })
-//     } else if (id === "contact") {
-//       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
-//     } else {
-//       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+//     const section = document.getElementById(id);
+//     if (section) {
+//       section.scrollIntoView({ behavior: "smooth", block: "start" });
 //     }
-//     setMobileMenuOpen(false)
+//     setMobileMenuOpen(false);
 //   }
 
 //   return (
@@ -104,10 +103,9 @@
 // }
 
 // export default Navbar
-
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { IoHome, IoPerson } from "react-icons/io5"
 import { FaGraduationCap, FaMicrochip, FaBarsProgress } from "react-icons/fa6"
 import { MdEmail, MdClose } from "react-icons/md"
@@ -129,45 +127,60 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
+  const navRef = useRef(null) // Ref to track navbar
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 300)
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight * 0.4; // Adjust threshold
+      const scrollPosition = window.scrollY + window.innerHeight * 0.4
 
-      let newActiveSection = "home"; // Default to home
-
+      let newActiveSection = "home"
       navItems.forEach(({ id }) => {
-        const section = document.getElementById(id);
+        const section = document.getElementById(id)
         if (section) {
-          const sectionTop = section.offsetTop - 100; // Offset to detect earlier
-          const sectionHeight = section.offsetHeight;
+          const sectionTop = section.offsetTop - 100
+          const sectionHeight = section.offsetHeight
 
           if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            newActiveSection = id;
+            newActiveSection = id
           }
         }
-      });
+      })
+      setActiveSection(newActiveSection)
+    }
 
-      setActiveSection(newActiveSection);
-    };
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []); // Run on mount
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    if (mobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside)
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [mobileMenuOpen])
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
+    const section = document.getElementById(id)
     if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      section.scrollIntoView({ behavior: "smooth", block: "start" })
     }
-    setMobileMenuOpen(false);
+    setMobileMenuOpen(false)
   }
 
   return (
     <>
-      <nav className={`navbar ${isVisible ? "visible" : ""} ${scrolled ? "scrolled" : ""}`}>
+      <nav ref={navRef} className={`navbar ${isVisible ? "visible" : ""} ${scrolled ? "scrolled" : ""}`}>
         <div className="logo">
           <span>Swayam Gupta</span>
         </div>

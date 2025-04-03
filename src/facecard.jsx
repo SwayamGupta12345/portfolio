@@ -26,7 +26,7 @@
 //                 <button className="download" onClick={() => window.open("https://drive.google.com/file/d/1aDle9o1bdLP6Yl42LK-6SElkQrol9WRv/view?usp=drive_link", "_blank")}>
 //                     <LuDownload /> Download CV
 //                 </button>
-                
+
 //             </div>
 //         </div></>
 //     );
@@ -69,19 +69,9 @@ const Facecard = () => {
         className="intro-section"
       >
         <h1 className="greeting">
-          Hello There, I'm <span className="highlight name-highlight">Swayam</span>
+          Hello There,
         </h1>
-{/* 
-        <h2 className="profession">
-          <TypedText
-            strings={["Web Developer", "Software Engineer", "AI Enthusiast", "Problem Solver"]}
-            typeSpeed={80}
-            backSpeed={50}
-            loop={true}
-            className="typed-text"
-          />
-        </h2> */}
-
+        <h1 className="greeting"> I'm <span className="highlight name-highlight">Swayam</span>,</h1>
         <p className="intro-text">
           I code beautifully elegant simple things and I love what I do. Just keeping things simple like that!
         </p>
