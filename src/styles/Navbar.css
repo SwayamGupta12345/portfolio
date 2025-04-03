@@ -1,4 +1,4 @@
-.navbar {
+ .navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,8 +8,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 1.2rem;
-  background-color: color-mix(in srgb, var(--bg-secondary) 40%, transparent); /* More translucent */
-  backdrop-filter: blur(15px); /* Adjust blur effect */
+  background-color: color-mix(in srgb, var(--bg-secondary) 40%, transparent); 
+  backdrop-filter: blur(15px); 
   z-index: 1000;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 10px var(--shadow-color);
@@ -26,7 +26,7 @@
   padding: 0.8rem 1rem;
   background-color: var(--bg-secondary);
   box-shadow: 0 4px 20px var(--shadow-color);
-  background-color: color-mix(in srgb, var(--bg-secondary) 30%, transparent); /* More translucent */
+  background-color: color-mix(in srgb, var(--bg-secondary) 30%, transparent); 
 }
 
 .logo {
@@ -92,15 +92,15 @@
 }
 
 .nav-icon {
-  font-size: 1.1rem; /* Ensure a fixed size */
-  min-width: 20px; /* Prevent shrinking */
+  font-size: 1.1rem; 
+  min-width: 20px;
   min-height: 20px;
-  transition: color 0.3s ease; /* Remove transform transitions */
+  transition: color 0.3s ease; 
 }
 
 .nav-item:hover .nav-icon,
 .nav-item.active .nav-icon {
-  transform: scale(1); /* Ensure no shrinking */
+  transform: scale(1); 
   color: var(--accent-secondary);
 }
 
@@ -188,7 +188,6 @@
   }
 } */
 
-/* Mobile Styles */
 @media (max-width: 1120px) {
   .navbar {
     padding: 1rem;
@@ -203,17 +202,17 @@
   .nav-links {
     position: fixed;
     top: 0;
-    right: -250px; /* Slightly off-screen */
-    width: 240px; /* More space for content */
+    right: -250px; 
+    width: 240px; 
     height: 100vh;
-    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); /* Stylish gradient */
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary)); 
     flex-direction: column;
     padding: 4rem 1.5rem 2rem 1.3rem;
     transition: right 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     z-index: 1001;
     gap: 1rem;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    border-left: 2px solid var(--accent-primary); /* Slight accent border */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); 
+    border-left: 2px solid var(--accent-primary); 
     margin:0px;
 }
 
@@ -260,4 +259,3 @@
     font-weight: 700;
   }
 }
-
