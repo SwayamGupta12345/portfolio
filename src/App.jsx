@@ -132,7 +132,7 @@ function App() {
         <Skills/>
         <Projects />
         <Contact />
-        <BackToTop />
+        {/* <BackToTop /> */}
       </div>
     </ThemeProvider>
   )

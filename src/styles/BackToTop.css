@@ -26,6 +26,7 @@
   visibility: visible;
   transform: translateY(0);
   color:black;
+  display:none;
 }
 
 .back-to-top:hover {
