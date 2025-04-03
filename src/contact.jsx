@@ -48,6 +48,12 @@ const Contact = () => {
         .then((response) => {
             console.log("Email sent successfully", response);
             alert("Message Sent Successfully!");
+            setFormData({
+                name: "",
+                email: "",
+                subject: "",
+                message: ""
+            });
         })
         .catch((error) => {
             console.error("Error sending email", error);

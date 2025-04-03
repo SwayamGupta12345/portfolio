@@ -16,7 +16,7 @@ const Skills = () => {
       skills: [
         { name: "C / C++", level: 90 },
         { name: "Python", level: 85 },
-        { name: "Go lang", level: 70 },
+        { name: "Go lang", level: 50 },
         { name: "Php", level: 85 },
       ],
     },{
@@ -25,9 +25,9 @@ const Skills = () => {
       skills: [
         { name: "HTML/CSS", level: 90 },
         { name: "JavaScript", level: 85 },
-        { name: "React.js", level: 80 },
-        { name: "Next.js", level: 75 },
-        { name: "Tailwind CSS", level: 85 },
+        { name: "React.js", level: 70 },
+        { name: "Next.js", level: 55 },
+        { name: "Tailwind CSS", level: 55 },
       ],
     },
     {
@@ -36,8 +36,8 @@ const Skills = () => {
       skills: [
         { name: "Node.js", level: 80 },
         { name: "Express.js", level: 75 },
-        { name: "FastAPI", level: 70 },
-        { name: "Flask", level: 65 },
+        { name: "FastAPI", level: 60 },
+        { name: "Flask", level: 55 },
         { name: "REST API Design", level: 85 },
       ],
     },
@@ -46,19 +46,19 @@ const Skills = () => {
       icon: <FaDatabase className="category-icon" />,
       skills: [
         { name: "MongoDB", level: 80 },
-        { name: "MySQL", level: 75 },
-        { name: "PostgreSQL", level: 65 },
-        { name: "Firebase", level: 70 },
+        { name: "MySQL", level: 85 },
+        { name: "PostgreSQL", level: 60 },
+        { name: "Firebase", level: 50 },
       ],
     },
     {
       category: "Tools & Technologies",
       icon: <FaTools className="category-icon" />,
       skills: [
-        { name: "Git & GitHub", level: 90 },
+        { name: "Git & GitHub", level: 80 },
         { name: "Docker", level: 65 },
-        { name: "AWS", level: 60 },
-        { name: "CI/CD", level: 70 },
+        // { name: "AWS", level: 60 },
+        // { name: "CI/CD", level: 70 },
         { name: "Vercel/Netlify", level: 85 },
       ],
     },
