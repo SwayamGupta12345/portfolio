@@ -1,63 +1,62 @@
 /* Theme Variables */
 :root {
-    /* Default theme (dark) */
-    --bg-primary: #121212;
-    --bg-secondary: #1e1e1e;
-    --bg-tertiary: #2a2a2a;
-    --text-primary: #f5f5f5;
-    --text-secondary: #b3b3b3;
-    --accent-primary: #4caf50;
-    --accent-secondary: #00ff88;
-    --card-bg: #1e1e1e;
-    --card-border: #333333;
-    --input-bg: #2a2a2a;
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --button-hover: #3a8a3c;
-    --transition-speed: 0.3s;
-  }
-  
-  /* Light theme variables */
-  .light-theme {
-    --bg-primary: #f5f5f5;
-    --bg-secondary: #ffffff;
-    --bg-tertiary: #e9e9e9;
-    --text-primary: #333333;
-    --text-secondary: #666666;
-    --accent-primary: #4caf50;
-    --accent-secondary: #00aa5a;
-    --card-bg: #ffffff;
-    --card-border: #e0e0e0;
-    --input-bg: #f0f0f0;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --button-hover: #3a8a3c;
-  }
-  
-  /* Dark theme variables (explicitly set for clarity) */
-  .dark-theme {
-    --bg-primary: #121212;
-    --bg-secondary: #1e1e1e;
-    --bg-tertiary: #2a2a2a;
-    --text-primary: #f5f5f5;
-    --text-secondary: #b3b3b3;
-    --accent-primary: #4caf50;
-    --accent-secondary: #00ff88;
-    --card-bg: #1e1e1e;
-    --card-border: #333333;
-    --input-bg: #2a2a2a;
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --button-hover: #3a8a3c;
-  }
-  
-  /* Global transition for theme changes */
-  * {
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-color
-      var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-  }
-  
-  /* Apply theme to body */
-  body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-  }
+  /* Default theme (dark) */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2a2a2a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b3b3b3;
+  --accent-primary: #4caf50;
+  --accent-secondary: #00ff88;
+  --card-bg: #1e1e1e;
+  --card-border: #333333;
+  --input-bg: #2a2a2a;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --button-hover: #3a8a3c;
+  --transition-speed: 0.3s;
+}
+
+/* Light theme variables */
+.light-theme {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e9e9e9;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --accent-primary: #4caf50;
+  --accent-secondary: #00aa5a;
+  --card-bg: #ffffff;
+  --card-border: #e0e0e0;
+  --input-bg: #f0f0f0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --button-hover: #3a8a3c;
+}
+
+/* Dark theme variables (explicitly set for clarity) */
+.dark-theme {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2a2a2a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b3b3b3;
+  --accent-primary: #4caf50;
+  --accent-secondary: #00ff88;
+  --card-bg: #1e1e1e;
+  --card-border: #333333;
+  --input-bg: #2a2a2a;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --button-hover: #3a8a3c;
+}
+
+/* Global transition for theme changes */
+* {
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+/* Apply theme to body */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
   
   
