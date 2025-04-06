@@ -1,7 +1,7 @@
 .project-card-container {
   perspective: 1000px;
   width: 300px;
-  height: 280px;
+  height: 320px;
   margin: 15px;
   transition: transform 0.3s ease;
 }
