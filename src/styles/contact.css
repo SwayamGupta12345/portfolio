@@ -178,6 +178,9 @@
   .send-button.error-btn {
     background-color: #d9534f;
   }
+  .send-button {
+    width: 100%;
+  }
   
   /* Responsive Design */
   @media (max-width: 1024px) {
@@ -191,6 +194,13 @@
   
     .contact-form-container {
       max-width: 100%;
+    }
+    #contact {
+      justify-content: center !important;
+      align-items: center !important;
+    }
+    .contact-heading {
+      text-align: center;
     }
   }
   

@@ -38,39 +38,42 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    
+
         emailjs.send(
             serviceID,
             templateID,
             { name: formData.name, email: formData.email, message: formData.message },
             publicKey
         )
-        .then((response) => {
-            console.log("Email sent successfully", response);
-            alert("Message Sent Successfully!");
-            setFormData({
-                name: "",
-                email: "",
-                subject: "",
-                message: ""
+            .then((response) => {
+                console.log("Email sent successfully", response);
+                alert("Message Sent Successfully!");
+                setFormData({
+                    name: "",
+                    email: "",
+                    subject: "",
+                    message: ""
+                });
+            })
+            .catch((error) => {
+                console.error("Error sending email", error);
+                alert("Failed to send message.");
             });
-        })
-        .catch((error) => {
-            console.error("Error sending email", error);
-            alert("Failed to send message.");
-        });
     };
 
     return (
         <div className={`portfolio-container ${isVisible ? "show" : ""}`} id="contact">
-             <div className="pagetitle"> <MdOutlineEmail /> &nbsp;Contact me </div>
-            
+            <div className="pagetitle"> <MdOutlineEmail /> &nbsp;Contact me </div>
+
             {/* Conditionally render Face component */}
             {showFace && <Face />}
 
             <div className="intro-section">
-                <h1>Contact <span className="highlight">Me</span></h1>
-                <p>Feel free to reach out for any inquiries or collaborations.</p>
+                <div class="contact-heading">
+                    <h1>Contact <span class="highlight">Me</span></h1>
+                    <p>Feel free to reach out for any inquiries or collaborations.</p>
+                </div>
+
                 <div className="contact-form-container">
                     <form className="contact-form" onSubmit={handleSubmit}>
                         <div className="form-group">
