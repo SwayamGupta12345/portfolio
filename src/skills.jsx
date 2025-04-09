@@ -16,7 +16,7 @@ const Skills = () => {
       skills: [
         { name: "C / C++", level: 90 },
         { name: "Python", level: 85 },
-        { name: "Go lang", level: 50 },
+        // { name: "Go lang", level: 50 },
         { name: "Php", level: 85 },
       ],
     },{
@@ -36,8 +36,8 @@ const Skills = () => {
       skills: [
         { name: "Node.js", level: 80 },
         { name: "Express.js", level: 75 },
-        { name: "FastAPI", level: 60 },
-        { name: "Flask", level: 55 },
+        // { name: "FastAPI", level: 60 },
+        // { name: "Flask", level: 55 },
         { name: "REST API Design", level: 85 },
       ],
     },
@@ -47,8 +47,8 @@ const Skills = () => {
       skills: [
         { name: "MongoDB", level: 80 },
         { name: "MySQL", level: 85 },
-        { name: "PostgreSQL", level: 60 },
-        { name: "Firebase", level: 50 },
+        // { name: "PostgreSQL", level: 60 },
+        // { name: "Firebase", level: 50 },
       ],
     },
     {
@@ -59,15 +59,15 @@ const Skills = () => {
         { name: "Docker", level: 65 },
         // { name: "AWS", level: 60 },
         // { name: "CI/CD", level: 70 },
-        { name: "Vercel/Netlify", level: 85 },
+        { name: "Vercel", level: 85 },
       ],
     },
     {
       category: "Mobile Development",
       icon: <FaMobileAlt className="category-icon" />,
       skills: [
-        { name: "React Native", level: 70 },
-        { name: "Flutter", level: 60 },
+        // { name: "React Native", level: 70 },
+        // { name: "Flutter", level: 60 },
         { name: "Responsive Design", level: 85 },
       ],
     },

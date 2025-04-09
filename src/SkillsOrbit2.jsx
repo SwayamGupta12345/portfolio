@@ -14,7 +14,7 @@ import "./styles/theme.css"
 const skills = [
     { icon: <SiC color="#A8B9CC" /> }, // C
     { icon: <SiCplusplus color="#00599C" /> }, // C++
-    { icon: <SiGo color="#00ADD8" /> }, // Go
+    // { icon: <SiGo color="#00ADD8" /> }, 
     { icon: <FaPython color="#3776AB" /> }, // Python
     { icon: <FaJs color="#F7DF1E" /> }, // JavaScript
     { icon: <DiMysql color="#4479A1" /> }, // MySQL
@@ -30,9 +30,9 @@ const skill2 = [
     { icon: <SiExpress color="var(--text-primary)" /> },
     { icon: <SiMongodb color="#4DB33D" /> },
     { icon: <SiTailwindcss color="#38B2AC" /> },
-    { icon: <SiOllama color="var(--text-primary)" /> },  // Ollama - Dark Orange
-    { icon: <SiFastapi color="#05998B" /> }, // FastAPI - Teal
-    { icon: <SiFlask color="var(--text-primary)" /> },
+    // { icon: <SiOllama color="var(--text-primary)" /> },  // Ollama - Dark Orange
+    // { icon: <SiFastapi color="#05998B" /> }, // FastAPI - Teal
+    // { icon: <SiFlask color="var(--text-primary)" /> },
 ];
 
 
