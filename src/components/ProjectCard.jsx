@@ -27,10 +27,18 @@ const ProjectCard = ({ project }) => {
           <div className="project-language">
             <span>🖥️ {project.language || "Text"}</span>
           </div>
+          <br />
           <div className="project-card-actions">
             <button className="info-button" onClick={handleFlip}>
               <FaInfoCircle /> More/Flip
             </button>
+            &nbsp;
+            &nbsp;
+            {project.homepage && (
+              <a href={project.homepage} target="_blank" rel="noopener noreferrer" className=" info-button">
+                <FaExternalLinkAlt /> Live Demo
+              </a>
+            )}
           </div>
         </div>
 
@@ -50,14 +58,17 @@ const ProjectCard = ({ project }) => {
               ) : (
                 <span className="tech-tag">{project.language || "N/A"}</span>
               )}
+
             </div>
           </div>
           <div className="project-links">
+            
             <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="project-link github">
               <FaGithub /> GitHub
             </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
             {project.homepage && (
-              <a href={project.homepage} target="_blank" rel="noopener noreferrer" className="project-link demo">
+              <a href={project.homepage} target="_blank" rel="noopener noreferrer" className="project-link github">
                 <FaExternalLinkAlt /> Live Demo
               </a>
             )}
