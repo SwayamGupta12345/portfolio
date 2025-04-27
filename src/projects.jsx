@@ -16,59 +16,65 @@ const Projects = () => {
   const [filteredRepos, setFilteredRepos] = useState([])
   const excludedRepos = ["portfolio", "SwayamGupta12345","Docker"];
   // Define project categories
-  const categories = ["All", "Web", "API", "AI/ML", "Tools"]
+  const categories = ["All", "Web", "API", "AI/ML", "C++", "Tools"];
 
-  // Map GitHub topics to our categories
-  const topicToCategory = {
-    react: "Web",
-    nextjs: "Web",
-    javascript: "Web",
-    typescript: "Web",
-    html: "Web",
-    css: "Web",
-    php:"Web",
-    api: "API",
-    "rest-api": "API",
-    fastapi: "API",
-    express: "API",
-    flask: "API",
-    "machine-learning": "AI/ML",
-    ai: "AI/ML",
-    "deep-learning": "AI/ML",
-    python: "AI/ML",
-    tensorflow: "AI/ML",
-    crewai: "AI/ML",
-    genai: "AI/ML",
-    pytorch: "AI/ML",
-    tool: "Tools",
-    utility: "Tools",
-    cli: "Tools",
-    automation: "Tools",
+// Map GitHub topics to our categories
+const topicToCategory = {
+  react: "Web",
+  nextjs: "Web",
+  javascript: "Web",
+  typescript: "Web",
+  html: "Web",
+  css: "Web",
+  php: "Web",
+  api: "API",
+  "rest-api": "API",
+  fastapi: "API",
+  express: "API",
+  flask: "API",
+  "machine-learning": "AI/ML",
+  ai: "AI/ML",
+  "deep-learning": "AI/ML",
+  python: "AI/ML",
+  tensorflow: "AI/ML",
+  crewai: "AI/ML",
+  genai: "AI/ML",
+  pytorch: "AI/ML",
+  tool: "Tools",
+  utility: "Tools",
+  cli: "Tools",
+  automation: "Tools",
+  cpp: "C++",  // Added C++ topic mapping
+};
+
+// Function to determine category based on repo data
+const determineCategory = (repo) => {
+  // Check if repo has topics that match our categories
+  if (repo.topics?.length) {
+    const matchedTopic = repo.topics.find(topic => topicToCategory[topic]);
+    if (matchedTopic) {
+      return topicToCategory[matchedTopic];
+    }
   }
 
-  // Function to determine category based on repo data
-  const determineCategory = (repo) => {
-    // Check if repo has topics that match our categories
-    if (repo.topics && repo.topics.length > 0) {
-      for (const topic of repo.topics) {
-        if (topicToCategory[topic]) {
-          return topicToCategory[topic]
-        }
-      }
-    }
+  // Fallback to language-based categorization
+  if (repo.language) {
+    const languageCategories = {
+      "JavaScript": "Web",
+      "TypeScript": "Web",
+      "HTML": "Web",
+      "CSS": "Web",
+      "Python": "AI/ML",
+      "Jupyter Notebook": "AI/ML",
+      "C++": "C++",  // Added C++ language fallback
+    };
 
-    // Fallback to language-based categorization
-    if (repo.language) {
-      if (["JavaScript", "TypeScript", "HTML", "CSS"].includes(repo.language)) {
-        return "Web"
-      } else if (["Python", "Jupyter Notebook"].includes(repo.language)) {
-        return "AI/ML"
-      }
-    }
-
-    // Default category
-    return "Tools"
+    return languageCategories[repo.language] || "Web"; // Default to Web if language is unrecognized
   }
+
+  // Default category
+  return "Web";
+};
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 300)
