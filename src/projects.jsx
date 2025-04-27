@@ -5,6 +5,7 @@ import "../src/styles/projects.css"
 import ProjectCard from "./components/ProjectCard"
 import ProjectFilter from "./components/ProjectFilter"
 import { motion } from "framer-motion"
+import { a } from "framer-motion/client"
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -13,7 +14,7 @@ const Projects = () => {
   const [error, setError] = useState(null)
   const [activeCategory, setActiveCategory] = useState("All")
   const [filteredRepos, setFilteredRepos] = useState([])
-  const excludedRepos = ["portfolio", "SwayamGupta12345"];
+  const excludedRepos = ["portfolio", "SwayamGupta12345","Docker"];
   // Define project categories
   const categories = ["All", "Web", "API", "AI/ML", "Tools"]
 
@@ -36,6 +37,8 @@ const Projects = () => {
     "deep-learning": "AI/ML",
     python: "AI/ML",
     tensorflow: "AI/ML",
+    crewai: "AI/ML",
+    genai: "AI/ML",
     pytorch: "AI/ML",
     tool: "Tools",
     utility: "Tools",
