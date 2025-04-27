@@ -16,7 +16,7 @@ const Projects = () => {
   const [filteredRepos, setFilteredRepos] = useState([])
   const excludedRepos = ["portfolio", "SwayamGupta12345","Docker"];
   // Define project categories
-  const categories = ["All", "Web", "AI/ML", "C++", "Tools"];
+  const categories = ["All", "Web","AI/ML", "C++", "Tools"];
 
 // Map GitHub topics to our categories
 const topicToCategory = {
@@ -53,14 +53,6 @@ const determineCategory = (repo) => {
     "react", "nextjs", "javascript", "typescript", "html", "css", "php",
     "web", "frontend", "website", "tailwind", "astro"
   ];
-  // const aiKeywords = [
-  //   "machine-learning", "ai", "deep-learning", "python", "tensorflow",
-  //   "crewai", "genai", "pytorch"
-  // ];
-  // const apiKeywords = [
-  //   "api", "rest-api", "fastapi", "express", "flask"
-  // ];
-
   const isWebRelated = () => {
     // Check topics
     if (repo.topics?.some(topic => webKeywords.includes(topic.toLowerCase()))) {
