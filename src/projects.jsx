@@ -16,7 +16,7 @@ const Projects = () => {
   const [filteredRepos, setFilteredRepos] = useState([])
   const excludedRepos = ["portfolio", "SwayamGupta12345","Docker"];
   // Define project categories
-  const categories = ["All", "Web", "API", "AI/ML", "C++", "Tools"];
+  const categories = ["All", "Web", "AI/ML", "C++", "Tools"];
 
 // Map GitHub topics to our categories
 const topicToCategory = {
@@ -49,32 +49,60 @@ const topicToCategory = {
 
 // Function to determine category based on repo data
 const determineCategory = (repo) => {
-  // Check if repo has topics that match our categories
-  if (repo.topics?.length) {
-    const matchedTopic = repo.topics.find(topic => topicToCategory[topic]);
-    if (matchedTopic) {
-      return topicToCategory[matchedTopic];
+  const webKeywords = [
+    "react", "nextjs", "javascript", "typescript", "html", "css", "php",
+    "web", "frontend", "website", "tailwind", "astro"
+  ];
+  // const aiKeywords = [
+  //   "machine-learning", "ai", "deep-learning", "python", "tensorflow",
+  //   "crewai", "genai", "pytorch"
+  // ];
+  // const apiKeywords = [
+  //   "api", "rest-api", "fastapi", "express", "flask"
+  // ];
+
+  const isWebRelated = () => {
+    // Check topics
+    if (repo.topics?.some(topic => webKeywords.includes(topic.toLowerCase()))) {
+      return true;
     }
+
+    // Check language
+    const webLanguages = ["JavaScript", "TypeScript", "HTML", "CSS", "EJS"];
+    if (repo.language && webLanguages.includes(repo.language)) {
+      return true;
+    }
+
+    // Check if deployment link exists
+    if (repo.homepage && repo.homepage.trim() !== "") {
+      return true;
+    }
+
+    return false;
+  };
+
+  if (isWebRelated()) {
+    return "Web";
   }
 
-  // Fallback to language-based categorization
-  if (repo.language) {
-    const languageCategories = {
-      "JavaScript": "Web",
-      "TypeScript": "Web",
-      "HTML": "Web",
-      "CSS": "Web",
-      "EJS": "Web",
-      "Python": "AI/ML",
-      "Jupyter Notebook": "AI/ML",
-      "C++": "C++",  // Added C++ language fallback
-    };
-
-    return languageCategories[repo.language] || "Tools"; // Default to Web if language is unrecognized
+  // Else normal topic-based mapping
+  const matchedTopic = repo.topics?.find(topic => topicToCategory[topic]);
+  if (matchedTopic) {
+    return topicToCategory[matchedTopic];
   }
 
-  // Default category
-  return "Web";
+  // Else normal language-based mapping
+  const languageCategories = {
+    "Python": "AI/ML",
+    "Jupyter Notebook": "AI/ML",
+    "C++": "C++",
+  };
+  if (repo.language && languageCategories[repo.language]) {
+    return languageCategories[repo.language];
+  }
+
+  // Default fallback
+  return "Tools";
 };
 
   useEffect(() => {
