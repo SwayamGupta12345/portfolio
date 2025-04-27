@@ -64,12 +64,13 @@ const determineCategory = (repo) => {
       "TypeScript": "Web",
       "HTML": "Web",
       "CSS": "Web",
+      "EJS": "Web",
       "Python": "AI/ML",
       "Jupyter Notebook": "AI/ML",
       "C++": "C++",  // Added C++ language fallback
     };
 
-    return languageCategories[repo.language] || "Web"; // Default to Web if language is unrecognized
+    return languageCategories[repo.language] || "Tools"; // Default to Web if language is unrecognized
   }
 
   // Default category
