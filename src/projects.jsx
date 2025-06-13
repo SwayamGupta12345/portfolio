@@ -16,8 +16,8 @@ const Projects = () => {
   const [filteredRepos, setFilteredRepos] = useState([])
   const excludedRepos = ["portfolio", "SwayamGupta12345","Docker"];
   // Define project categories
-  const categories = ["All", "Web","AI/ML", "C++", "Tools"];
-
+  // const categories = ["All", "Web","AI/ML", "C++", "Tools"];
+  const categories = ["All", "Web","AI/ML", "C++"];
 // Map GitHub topics to our categories
 const topicToCategory = {
   react: "Web",
