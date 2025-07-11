@@ -71,7 +71,7 @@ const Facecard = () => {
         <h1 className="greeting">
           Hello There,
         </h1>
-        <h1 className="greeting"> I'm <span className="highlight name-highlight">Swayam</span>,</h1>
+        <h1 className="greeting"> I&apos;m <span className="highlight name-highlight">Swayam</span>,</h1>
         <p className="intro-text">
           I code beautifully elegant simple things and I love what I do. Just keeping things simple like that!
         </p>

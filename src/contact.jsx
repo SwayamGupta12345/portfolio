@@ -69,8 +69,8 @@ const Contact = () => {
             {showFace && <Face />}
 
             <div className="intro-section">
-                <div class="contact-heading">
-                    <h1>Contact <span class="highlight">Me</span></h1>
+                <div className="contact-heading">
+                    <h1>Contact <span className="highlight">Me</span></h1>
                     <p>Feel free to reach out for any inquiries or collaborations.</p>
                 </div>
 
