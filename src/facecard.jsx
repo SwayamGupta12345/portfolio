@@ -80,7 +80,8 @@ const Facecard = () => {
           className="download-button"
           onClick={() =>
             window.open(
-              "https://drive.google.com/file/d/1aDle9o1bdLP6Yl42LK-6SElkQrol9WRv/view?usp=drive_link",
+              // "https://drive.google.com/file/d/1aDle9o1bdLP6Yl42LK-6SElkQrol9WRv/view?usp=drive_link",
+              "https://drive.google.com/file/d/1zWBal8-hGprlcbfuKs8MwUn5FXihMnXy/view?usp=sharing",
               "_blank",
             )
           }
