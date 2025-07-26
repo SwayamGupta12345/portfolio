@@ -4,40 +4,62 @@ import profileph from "./assets/profile.jpg";
 import "./facecard.css";
 import { SiLeetcode } from "react-icons/si";
 const Face = () => {
-    return (
-        <>
-            <div className="profile-card">
-                <img src={profileph} alt="Profile" className="profile-image" />
-                <h2>Swayam Gupta</h2>
-                <p>Web Developer, AI Enthusiast</p>
-                <p>swayamsam2005@gmail.com</p>
-                <p>Delhi, India</p>
+  return (
+    <>
+      <div className="profile-card">
+        <img src={profileph} alt="Profile" className="profile-image" />
+        <h2>Swayam Gupta</h2>
+        <p>Web Developer + AI Integrator</p>
+        <p>I build full-stack tools with real-world impact.</p>
+        <p>swayamsam2005@gmail.com</p>
+        <p>Delhi, India</p>
 
-                {/* Social Icons */}
-                <div className="social-icons">
-                    <a href="https://leetcode.com/u/Swayam_Gupta/" className="icon" target="_blank" rel="noopener noreferrer">
-                        <SiLeetcode />
-                    </a>
-                    <a href="https://github.com/SwayamGupta12345" className="icon" target="_blank" rel="noopener noreferrer">
-                        <FaGithub />
-                    </a>
-                    <a href="https://www.linkedin.com/in/swayamgupta12/" className="icon" target="_blank" rel="noopener noreferrer">
-                        <FaLinkedin />
-                    </a>
-                </div>
+        {/* Social Icons */}
+        <div className="social-icons">
+          <a
+            href="https://leetcode.com/u/Swayam_Gupta/"
+            className="icon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiLeetcode />
+          </a>
+          <a
+            href="https://github.com/SwayamGupta12345"
+            className="icon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/swayamgupta12/"
+            className="icon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin />
+          </a>
+        </div>
 
-                {/* Contact Button */}
-                <button
-                    className="contact-button"
-                    onClick={() => window.open("https://mail.google.com/mail/u/0/?fs=1&to=swayamsam2005@gmail.com&tf=cm", "_blank")}
-                >
-                    <span className="icon"><MdOutlineEmail /></span>&nbsp;&nbsp;Contact Me
-                </button>
-
-            </div>
-
-        </>
-    );
+        {/* Contact Button */}
+        <button
+          className="contact-button"
+          onClick={() =>
+            window.open(
+              "https://mail.google.com/mail/u/0/?fs=1&to=swayamsam2005@gmail.com&tf=cm",
+              "_blank"
+            )
+          }
+        >
+          <span className="icon">
+            <MdOutlineEmail />
+          </span>
+          &nbsp;&nbsp;Contact Me
+        </button>
+      </div>
+    </>
+  );
 };
 
 export default Face;
