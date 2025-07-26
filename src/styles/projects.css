@@ -38,7 +38,7 @@
   flex-wrap: wrap;
   justify-content: center; /* Centers the cards */
   gap: 20px;
-  width: 80%; /* Adjust to control width */
+  width: 90%; /* Adjust to control width */
   max-width: 1200px; /* Prevents overflow */
   min-height: auto; /* Allows it to grow dynamically */
 }
