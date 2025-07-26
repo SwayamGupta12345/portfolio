@@ -85,19 +85,6 @@
 // export default ProjectCard
 
 "use client";
-import PropTypes from "prop-types";
-
-ProjectCard.propTypes = {
-  project: PropTypes.shape({
-    name: PropTypes.string,
-    description: PropTypes.string,
-    language: PropTypes.string,
-    homepage: PropTypes.string,
-    html_url: PropTypes.string,
-    topics: PropTypes.arrayOf(PropTypes.string),
-  }).isRequired,
-};
-
 import { useState } from "react";
 import { FaGithub, FaExternalLinkAlt, FaInfoCircle } from "react-icons/fa";
 import "../styles/ProjectCard.css";
