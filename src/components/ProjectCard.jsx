@@ -62,7 +62,7 @@
 //             </div>
 //           </div>
 //           <div className="project-links">
-            
+
 //             <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="project-link github">
 //               <FaGithub /> GitHub
 //             </a>
@@ -85,6 +85,18 @@
 // export default ProjectCard
 
 "use client";
+import PropTypes from "prop-types";
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string,
+    language: PropTypes.string,
+    homepage: PropTypes.string,
+    html_url: PropTypes.string,
+    topics: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+};
 
 import { useState } from "react";
 import { FaGithub, FaExternalLinkAlt, FaInfoCircle } from "react-icons/fa";
@@ -100,7 +112,6 @@ const ProjectCard = ({ project }) => {
   // 🖼️ Auto-load image if present
   // const imagePath = `/project-images/${project.name}.png`;
   const imagePath = `https://opengraph.githubassets.com/1/SwayamGupta12345/${project.name}`;
-
 
   return (
     <div className={`project-card-container ${flipped ? "flipped" : ""}`}>
