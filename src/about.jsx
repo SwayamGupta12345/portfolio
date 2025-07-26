@@ -27,7 +27,7 @@ const About = () => {
             <strong>Building seamless experiences, one line of code at a time.</strong>
           </p>
           <p className="about-description">
-            I'm <span className="highlight">Swayam Gupta</span>, a passionate
+            I&apos;m <span className="highlight">&nbsp;Swayam Gupta</span>, a passionate
             <strong> Web Developer, Software Engineer, and AI Enthusiast</strong>.
           </p>
           <p className="about-description">

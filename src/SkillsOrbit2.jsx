@@ -18,7 +18,7 @@ const skills = [
     { icon: <FaPython color="#3776AB" /> }, // Python
     { icon: <FaJs color="#F7DF1E" /> }, // JavaScript
     { icon: <DiMysql color="#4479A1" /> }, // MySQL
-    { icon: <FaGithub color="var(--text-primary)" /> },
+    { icon: <FaGithub color="var(--text-primary)" /> }, 
     { icon: <DiPhp color="#777BB4" /> }, // PHP
 ];
 
@@ -31,7 +31,8 @@ const skill2 = [
     { icon: <SiMongodb color="#4DB33D" /> },
     { icon: <SiTailwindcss color="#38B2AC" /> },
     // { icon: <SiOllama color="var(--text-primary)" /> },  // Ollama - Dark Orange
-    // { icon: <SiFastapi color="#05998B" /> }, // FastAPI - Teal
+    
+    { icon: <SiFastapi color="#05998B" /> }, // FastAPI - Teal
     // { icon: <SiFlask color="var(--text-primary)" /> },
 ];
 
