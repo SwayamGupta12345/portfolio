@@ -83,6 +83,7 @@ const Facecard = () => {
           I code beautifully elegant simple things and I love what I do.
           <p>I build web + AI tools that solve real problems.</p>
           <p>Just keeping things simple like that!</p>
+          <p>Building GenAI tools and automation projects that actually ship.</p>
         </p>
         <div className="button-container ">
           <div>

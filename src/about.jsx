@@ -56,42 +56,34 @@ const About = () => {
 
           <p className="about-description">
             I&apos;m <span className="highlight">&nbsp;Swayam Gupta</span>, a
-            passionate
-            <strong>
-              {" "}
-              Web Developer, Software Engineer, and AI Enthusiast
-            </strong>{" "}
-            currently pursuing B.Tech in Computer Science at JIIT.
+            passionate <strong>Web Developer</strong> and{" "}
+            <strong>AI Integrator</strong>, currently pursuing B.Tech in
+            Computer Science at JIIT.
           </p>
 
           <p className="about-description">
-            I specialize in building high-performance, full-stack applications
-            using the{" "}
-            <strong>
-              MERN stack, FastAPI, and GenAI tools like OpenAI, CrewAI, and
-              LangChain
-            </strong>
-            . My focus is on crafting clean, efficient, and impactful digital
+            I specialize in crafting high-performance, full-stack applications
+            using the <strong>MERN stack</strong>, <strong>FastAPI</strong>, and{" "}
+            <strong>GenAI tools like OpenAI, CrewAI, and LangChain</strong>. My
+            focus is always on clean, efficient, and impactful digital
             solutions.
           </p>
 
           <p className="about-description">
             As the <strong>Technical Head of the AI/ML Club</strong>, I’ve led
-            multiple teams, conducted workshops, and built tools that bridge AI
+            teams, delivered workshops, and built real-world tools that merge AI
             with education and productivity.
           </p>
 
           <p className="about-description">
-            I thrive at the intersection of code and creativity — constantly
-            learning, mentoring, and exploring ways to turn innovative ideas
-            into usable products.
+            I thrive at the intersection of <strong>code and creativity</strong>{" "}
+            — always learning, mentoring, and converting ideas into working
+            products.
           </p>
 
           <p className="about-tagline">
-            <span>
-              🚀 Always exploring new tech, shipping real projects, and open to
-              collaborations!
-            </span>
+            🚀 Always exploring new tech, shipping real projects, and open to
+            collaborations!
           </p>
         </motion.div>
         <motion.div
