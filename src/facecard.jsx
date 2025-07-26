@@ -77,11 +77,12 @@ const Facecard = () => {
           I&apos;m <span className="highlight name-highlight">Swayam</span>,
         </h1>
         <br />
-        <h4 className="title">Web Developer and Software Engineer</h4>
+        <h4 className="title">Full-Stack & AI Developer</h4>
         <br />
         <p className="intro-text">
-          I code beautifully elegant simple things and I love what I do. Just
-          keeping things simple like that!
+          I code beautifully elegant simple things and I love what I do.
+          <p>I build web + AI tools that solve real problems.</p>
+          <p>Just keeping things simple like that!</p>
         </p>
         <div className="button-container ">
           <div>

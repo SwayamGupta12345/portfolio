@@ -9,8 +9,7 @@ const Face = () => {
       <div className="profile-card">
         <img src={profileph} alt="Profile" className="profile-image" />
         <h2>Swayam Gupta</h2>
-        <p>Web Developer + AI Integrator</p>
-        <p>I build full-stack tools with real-world impact.</p>
+        <p>Web Developer | AI Integrator</p>
         <p>swayamsam2005@gmail.com</p>
         <p>Delhi, India</p>
 
