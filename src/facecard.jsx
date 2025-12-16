@@ -83,11 +83,13 @@ const Facecard = () => {
           I code beautifully elegant simple things and I love what I do.
           <p>I build web + AI tools that solve real problems.</p>
           <p>Just keeping things simple like that!</p>
-          <p>Building GenAI tools and automation projects that actually ship.</p>
+          <p>
+            Building GenAI tools and automation projects that actually ship.
+          </p>
         </p>
         <div className="button-container ">
           <div>
-            <motion.button
+            {/* <motion.button
               className="download-button"
               onClick={() =>
                 window.open(
@@ -100,7 +102,17 @@ const Facecard = () => {
               whileTap={{ scale: 0.95 }}
             >
               <LuDownload /> Download CV
-            </motion.button>
+            </motion.button> */}
+            <motion.a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="download-button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <LuDownload /> Download CV
+            </motion.a>
           </div>
           <div>
             <motion.button
