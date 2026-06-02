@@ -1,4 +1,3 @@
-"use client"
 import "../styles/ProjectFilter.css"
 
 const ProjectFilter = ({ categories, activeCategory, setActiveCategory }) => {

@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import "./education.css"
 import { motion } from "framer-motion"

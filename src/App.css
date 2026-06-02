@@ -140,7 +140,7 @@ body,
   width: 100%;
   max-width: 95dvw;
   min-width: 90dvw;
-  background-color: #121212;
+  background-color:var(--bg-primary);
   color: white;
   padding: 20px;
   min-height: 85dvh;

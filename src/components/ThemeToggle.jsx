@@ -1,5 +1,3 @@
-"use client"
-
 import { useContext } from "react"
 import { ThemeContext } from "../utils/ThemeContext"
 import { FiSun, FiMoon } from "react-icons/fi"

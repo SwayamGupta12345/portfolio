@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./facecard.css";
 import { LuSend } from "react-icons/lu";
 import Face from "./face";
-import "../src/styles/contact.css";
+import "./styles/contact.css";
 import emailjs from "@emailjs/browser";
 import { MdOutlineEmail } from "react-icons/md";
 

@@ -2,6 +2,8 @@
   position: relative;
   overflow: hidden;
   height: 920px;
+  min-height: fit-content;
+  display: flex;
 }
 
 .about-content {
@@ -124,7 +126,7 @@
     font-size: 0.9rem;
   }
 }
-
+/* 
 @media (max-width: 400px) {
   .about-section {
     height: 1050px;
@@ -149,4 +151,4 @@
   .about-section {
     height: 1400px;
   }
-}
+} */

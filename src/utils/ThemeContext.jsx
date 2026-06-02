@@ -1,5 +1,3 @@
-"use client"
-
 import { createContext, useState, useEffect } from "react"
 
 // Create a context for theme management
