@@ -3,7 +3,6 @@
   overflow: hidden;
   height: 920px;
   min-height: fit-content;
-  display: flex;
 }
 
 .about-content {
@@ -106,6 +105,7 @@
       top: 50%;
       left: 0;
       right: 0;
+      margin-top: 10px;
       margin-left: auto;
       margin-right: auto;
       width: 300px; /* Ensure width is set */
@@ -126,7 +126,7 @@
     font-size: 0.9rem;
   }
 }
-/* 
+
 @media (max-width: 400px) {
   .about-section {
     height: 1050px;
@@ -151,4 +151,4 @@
   .about-section {
     height: 1400px;
   }
-} */
+}
