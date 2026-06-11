@@ -58,7 +58,7 @@ const ICON_MAP = {
   SiRender: <SiRender />,
   SiMongodb: <SiMongodb />,
   SiVercel: <SiVercel />,
-    SiGoogle: <SiGoogle />,
+  SiGoogle: <SiGoogle />,
   GrMysql: <GrMysql />,
   MdPhoneIphone: <MdPhoneIphone />,
   SiHtml5: <SiHtml5 />,
@@ -66,77 +66,6 @@ const ICON_MAP = {
   SiCplusplus: <SiCplusplus />,
 };
 
-
-// const SkillCategory = ({ category, icon, skills }) => {
-//    const categoryIcon = ICON_MAP[icon];
-//   return (  
-//     <motion.div
-//       className="skill-category"
-//       initial={{ opacity: 0, y: 20 }}
-//       whileInView={{ opacity: 1, y: 0 }}
-//       viewport={{ once: false, amount: 0.2 }}
-//       transition={{ duration: 0.5 }}
-//     >
-//      <div className="skill-category-header">
-//         {icon}
-//         <h3>{category}</h3>
-//       </div>
-
-//       {/* <div className="skill-list-badges">
-//         {skills.map((skill, index) => (
-//           <motion.div
-//             key={index}
-//             className="skill-badge shimmer"
-//             initial={{ opacity: 0, scale: 0.9 }}
-//             whileInView={{ opacity: 1, scale: 1 }}
-//             viewport={{ once: false, amount: 0.2 }}
-//             transition={{ duration: 0.3, delay: index * 0.05 }}
-//           >
-//             {skill.icon && <span className="badge-icon">{skill.icon}</span>}
-//             <span>{typeof skill === "string" ? skill : skill.name}</span>
-//           </motion.div>
-//         ))}
-//       </div> */}
-//       <div className="skill-list-badges">
-//         {skills.map((skill, index) => {
-//           const skillName = typeof skill === "string" ? skill : skill.name;
-//           const skillIcon = typeof skill === "string" ? null : skill.icon;
-
-//           return (
-//             <motion.div
-//               key={index}
-//               className="skill-badge shimmer"
-//               initial={{ opacity: 0, scale: 0.9 }}
-//               whileInView={{ opacity: 1, scale: 1 }}
-//               viewport={{ once: false, amount: 0.2 }}
-//               transition={{ duration: 0.3, delay: index * 0.05 }}
-//             >
-//               {skillIcon && <span className="badge-icon">{skillIcon}</span>}
-//               <span>{skillName}</span>
-//             </motion.div>
-//           );
-//         })}
-//       </div>
-//     </motion.div>
-//   );
-// };
-// // ✅ PropTypes validation
-// SkillCategory.propTypes = {
-//   category: PropTypes.string.isRequired,
-//   icon: PropTypes.node.isRequired,
-//   skills: PropTypes.arrayOf(
-//     PropTypes.oneOfType([
-//       PropTypes.string,
-//       PropTypes.shape({
-//         name: PropTypes.string.isRequired,
-
-//         icon: PropTypes.node,
-//       }),
-//     ])
-//   ).isRequired,
-// };
-
-// export default SkillCategory;
 const SkillCategory = ({ category, icon, skills }) => {
   const categoryIcon = ICON_MAP[icon]; // icon is a string like "FaCode"
 
@@ -153,28 +82,13 @@ const SkillCategory = ({ category, icon, skills }) => {
         <h3>{category}</h3>
       </div>
 
-      {/* Old version kept for reference */}
-      {/* <div className="skill-list-badges">
-        {skills.map((skill, index) => (
-          <motion.div
-            key={index}
-            className="skill-badge shimmer"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.3, delay: index * 0.05 }}
-          >
-            {skill.icon && <span className="badge-icon">{skill.icon}</span>}
-            <span>{typeof skill === "string" ? skill : skill.name}</span>
-          </motion.div>
-        ))}
-      </div> */}
-
       <div className="skill-list-badges">
         {skills.map((skill, index) => {
           const skillName = typeof skill === "string" ? skill : skill.name;
           const skillIcon =
-            typeof skill === "object" && skill.icon ? ICON_MAP[skill.icon] : null;
+            typeof skill === "object" && skill.icon
+              ? ICON_MAP[skill.icon]
+              : null;
 
           return (
             <motion.div
@@ -206,9 +120,8 @@ SkillCategory.propTypes = {
         name: PropTypes.string.isRequired,
         icon: PropTypes.string, // now string instead of JSX
       }),
-    ])
+    ]),
   ).isRequired,
 };
 
 export default SkillCategory;
-

@@ -1,8 +1,84 @@
 import { useState, useEffect } from "react";
-import "../src/styles/projects.css";
+import "./styles/projects.css";
 import ProjectCard from "./components/ProjectCard";
 import ProjectFilter from "./components/ProjectFilter";
 import { motion } from "framer-motion";
+
+const CACHE_KEY = "gh_repos_cache";
+const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
+
+const excludedRepos = [
+  "portfolio",
+  "SwayamGupta12345",
+  "Docker",
+  "open-source-lab",
+  "Info_sec_project",
+  "ui-cloner",
+  "Medi_back",
+  "lavanya",
+  "Medi_Front",
+  "img_gen_basic",
+  "Stealth-lock",
+  "apollo_bandhn",
+];
+
+const topicToCategory = {
+  react: "Web",
+  nextjs: "Web",
+  javascript: "Web",
+  typescript: "Web",
+  html: "Web",
+  css: "Web",
+  php: "Web",
+  "machine-learning": "AI/ML",
+  ai: "AI/ML",
+  "deep-learning": "AI/ML",
+  python: "AI/ML",
+  tensorflow: "AI/ML",
+  crewai: "AI/ML",
+  genai: "AI/ML",
+  pytorch: "AI/ML",
+  cpp: "C++",
+};
+
+const webKeywords = [
+  "react",
+  "nextjs",
+  "javascript",
+  "typescript",
+  "html",
+  "css",
+  "php",
+  "web",
+  "frontend",
+  "website",
+  "tailwind",
+  "astro",
+];
+const webLanguages = ["JavaScript", "TypeScript", "HTML", "CSS", "EJS"];
+const languageCategories = {
+  Python: "AI/ML",
+  "Jupyter Notebook": "AI/ML",
+  "C++": "C++",
+};
+
+const determineCategory = (repo) => {
+  const hasWebTopic = repo.topics?.some((t) =>
+    webKeywords.includes(t.toLowerCase()),
+  );
+  const hasWebLanguage = repo.language && webLanguages.includes(repo.language);
+  const hasHomepage = repo.homepage?.trim();
+
+  if (hasWebTopic || hasWebLanguage || hasHomepage) return "Web";
+
+  const matchedTopic = repo.topics?.find((t) => topicToCategory[t]);
+  if (matchedTopic) return topicToCategory[matchedTopic];
+
+  if (repo.language && languageCategories[repo.language])
+    return languageCategories[repo.language];
+
+  return "Tools";
+};
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,240 +87,65 @@ const Projects = () => {
   const [error, setError] = useState(null);
   const [activeCategory, setActiveCategory] = useState("All");
   const [filteredRepos, setFilteredRepos] = useState([]);
-  // const excludedRepos = ["portfolio", "SwayamGupta12345", "Docker"];
-  // Define project categories
-  // const categories = ["All", "Web","AI/ML", "C++", "Tools"];
   const categories = ["All", "Web", "AI/ML", "C++"];
-  // Map GitHub topics to our categories
-  // const topicToCategory = {
-  //   react: "Web",
-  //   nextjs: "Web",
-  //   javascript: "Web",
-  //   typescript: "Web",
-  //   html: "Web",
-  //   css: "Web",
-  //   php: "Web",
-  //   api: "API",
-  //   "rest-api": "API",
-  //   fastapi: "API",
-  //   express: "API",
-  //   flask: "API",
-  //   "machine-learning": "AI/ML",
-  //   ai: "AI/ML",
-  //   "deep-learning": "AI/ML",
-  //   python: "AI/ML",
-  //   tensorflow: "AI/ML",
-  //   crewai: "AI/ML",
-  //   genai: "AI/ML",
-  //   pytorch: "AI/ML",
-  //   tool: "Tools",
-  //   utility: "Tools",
-  //   cli: "Tools",
-  //   automation: "Tools",
-  //   cpp: "C++", // Added C++ topic mapping
-  // };
-
-  // Function to determine category based on repo data
-  // const determineCategory = (repo) => {
-  //   const webKeywords = [
-  //     "react",
-  //     "nextjs",
-  //     "javascript",
-  //     "typescript",
-  //     "html",
-  //     "css",
-  //     "php",
-  //     "web",
-  //     "frontend",
-  //     "website",
-  //     "tailwind",
-  //     "astro",
-  //   ];
-  //   const isWebRelated = () => {
-  //     // Check topics
-  //     if (
-  //       repo.topics?.some((topic) => webKeywords.includes(topic.toLowerCase()))
-  //     ) {
-  //       return true;
-  //     }
-
-  //     // Check language
-  //     const webLanguages = ["JavaScript", "TypeScript", "HTML", "CSS", "EJS"];
-  //     if (repo.language && webLanguages.includes(repo.language)) {
-  //       return true;
-  //     }
-
-  //     // Check if deployment link exists
-  //     if (repo.homepage && repo.homepage.trim() !== "") {
-  //       return true;
-  //     }
-
-  //     return false;
-  //   };
-
-  //   if (isWebRelated()) {
-  //     return "Web";
-  //   }
-
-  //   // Else normal topic-based mapping
-  //   const matchedTopic = repo.topics?.find((topic) => topicToCategory[topic]);
-  //   if (matchedTopic) {
-  //     return topicToCategory[matchedTopic];
-  //   }
-
-  //   // Else normal language-based mapping
-  //   const languageCategories = {
-  //     Python: "AI/ML",
-  //     "Jupyter Notebook": "AI/ML",
-  //     "C++": "C++",
-  //   };
-  //   if (repo.language && languageCategories[repo.language]) {
-  //     return languageCategories[repo.language];
-  //   }
-
-  //   // Default fallback
-  //   return "Tools";
-  // };
 
   useEffect(() => {
-    const excludedRepos = ["portfolio", "SwayamGupta12345", "Docker"];
-    const topicToCategory = {
-      react: "Web",
-      nextjs: "Web",
-      javascript: "Web",
-      typescript: "Web",
-      html: "Web",
-      css: "Web",
-      php: "Web",
-      api: "API",
-      "rest-api": "API",
-      fastapi: "API",
-      express: "API",
-      flask: "API",
-      "machine-learning": "AI/ML",
-      ai: "AI/ML",
-      "deep-learning": "AI/ML",
-      python: "AI/ML",
-      tensorflow: "AI/ML",
-      crewai: "AI/ML",
-      genai: "AI/ML",
-      pytorch: "AI/ML",
-      tool: "Tools",
-      utility: "Tools",
-      cli: "Tools",
-      automation: "Tools",
-      cpp: "C++", // Added C++ topic mapping
-    };
-
-    const determineCategory = (repo) => {
-      const webKeywords = [
-        "react",
-        "nextjs",
-        "javascript",
-        "typescript",
-        "html",
-        "css",
-        "php",
-        "web",
-        "frontend",
-        "website",
-        "tailwind",
-        "astro",
-      ];
-      const isWebRelated = () => {
-        // Check topics
-        if (
-          repo.topics?.some((topic) =>
-            webKeywords.includes(topic.toLowerCase())
-          )
-        ) {
-          return true;
-        }
-
-        // Check language
-        const webLanguages = ["JavaScript", "TypeScript", "HTML", "CSS", "EJS"];
-        if (repo.language && webLanguages.includes(repo.language)) {
-          return true;
-        }
-
-        // Check if deployment link exists
-        if (repo.homepage && repo.homepage.trim() !== "") {
-          return true;
-        }
-
-        return false;
-      };
-
-      if (isWebRelated()) {
-        return "Web";
-      }
-
-      // Else normal topic-based mapping
-      const matchedTopic = repo.topics?.find((topic) => topicToCategory[topic]);
-      if (matchedTopic) {
-        return topicToCategory[matchedTopic];
-      }
-
-      // Else normal language-based mapping
-      const languageCategories = {
-        Python: "AI/ML",
-        "Jupyter Notebook": "AI/ML",
-        "C++": "C++",
-      };
-      if (repo.language && languageCategories[repo.language]) {
-        return languageCategories[repo.language];
-      }
-
-      // Default fallback
-      return "Tools";
-    };
     setTimeout(() => setIsVisible(true), 300);
 
-    // Fetch GitHub Repositories with topics
-    fetch("https://api.github.com/users/SwayamGupta12345/repos")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch repositories.");
-        }
-        return response.json();
+    // Check cache first
+
+    const cached = sessionStorage.getItem(CACHE_KEY);
+    if (cached) {
+      const { data, timestamp } = JSON.parse(cached);
+      if (Date.now() - timestamp < CACHE_TTL) {
+        setRepos(data);
+        setFilteredRepos(data);
+        setLoading(false);
+        return;
+      }
+    }
+
+    // Single API call: per_page=100 gets everything in one request, type=public filters out private repos
+    fetch(
+      "https://api.github.com/users/SwayamGupta12345/repos?per_page=100&type=public",
+    )
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch repositories.");
+        return res.json();
       })
       .then((data) => {
-        // Sort by updated date and add category
-        const processedRepos = data
+        const processed = data
+          .filter((repo) => !repo.private && !excludedRepos.includes(repo.name))
           .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-          .filter((repo) => !excludedRepos.includes(repo.name))
-          .map((repo) => ({
-            ...repo,
-            category: determineCategory(repo),
-          }));
+          .map((repo) => ({ ...repo, category: determineCategory(repo) }));
 
-        setRepos(processedRepos);
-        setFilteredRepos(processedRepos);
+        sessionStorage.setItem(
+          CACHE_KEY,
+          JSON.stringify({ data: processed, timestamp: Date.now() }),
+        );
+
+        setRepos(processed);
+        setFilteredRepos(processed);
         setLoading(false);
       })
-      .catch((error) => {
-        console.error("Error fetching repositories:", error);
-        setError(error.message);
+      .catch((err) => {
+        console.error("Error fetching repositories:", err);
+        setError(err.message);
         setLoading(false);
       });
   }, []);
 
-  // Filter repos when category changes
   useEffect(() => {
-    if (activeCategory === "All") {
-      setFilteredRepos(repos);
-    } else {
-      setFilteredRepos(
-        repos.filter((repo) => repo.category === activeCategory)
-      );
-    }
+    setFilteredRepos(
+      activeCategory === "All"
+        ? repos
+        : repos.filter((r) => r.category === activeCategory),
+    );
   }, [activeCategory, repos]);
 
   return (
     <div
-      className={`portfolio-container projects-container ${
-        isVisible ? "show" : ""
-      }`}
+      className={`portfolio-container projects-container ${isVisible ? "show" : ""}`}
       id="projects"
     >
       <div className="projects-header">
@@ -257,7 +158,6 @@ const Projects = () => {
         >
           My Projects
         </motion.h2>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
