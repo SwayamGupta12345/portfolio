@@ -50,20 +50,6 @@ const Facecard = () => {
         </p>
         <div className="button-container ">
           <div>
-            {/* <motion.button
-              className="download-button"
-              onClick={() =>
-                window.open(
-                  // "https://drive.google.com/file/d/1aDle9o1bdLP6Yl42LK-6SElkQrol9WRv/view?usp=drive_link",
-                  "https://drive.google.com/file/d/1zWBal8-hGprlcbfuKs8MwUn5FXihMnXy/view?usp=sharing",
-                  "_blank"
-                )
-              }
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <LuDownload /> Download CV
-            </motion.button> */}
             <motion.a
               href="/resume.pdf"
               target="_blank"

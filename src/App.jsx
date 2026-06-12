@@ -6,7 +6,7 @@ import Education from "./education"
 import Projects from "./projects"
 import Contact from "./contact"
 import Navbar from "./components/Navbar"
-import BackToTop from "./components/BackToTop"
+
 import { ThemeProvider } from "./utils/ThemeContext"
 import Skills from "./skills"
 
@@ -21,7 +21,7 @@ function App() {
         <Skills/>
         <Projects />
         <Contact />
-        {/* <BackToTop /> */}
+   
       </div>
     </ThemeProvider>
   )
