@@ -9,15 +9,20 @@
   gap: 20px; /* Adds spacing between grid items */
   justify-content: center;
   align-items: start;
-  background-color:var(--bg-secondary);
-  
+  background-color: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+  padding: 80px 20px;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20dvw, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .skill-card {
@@ -44,7 +49,7 @@
 .skill-header h3 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: ;
+  color:;
 }
 
 .skill-icon {
@@ -57,7 +62,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  color:
+  color:;
 }
 
 .skill-item {
@@ -67,7 +72,9 @@
   border-radius: 5px;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: background 0.01s ease, transform 0.01s ease;
+  transition:
+    background 0.01s ease,
+    transform 0.01s ease;
 }
 
 .skill-item:hover {
@@ -84,11 +91,11 @@
 .portfolio-container.show {
   opacity: 1;
 }
-  .skills-container {
+/* .skills-container {
   position: relative;
   overflow: hidden;
   padding: 80px 20px;
-}
+} */
 
 .skills-grid {
   display: grid;
@@ -112,7 +119,7 @@
   }
 
   .skills-grid {
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 }
@@ -123,8 +130,7 @@
   }
 
   .skills-grid {
-    grid-template-columns:1fr ;
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 }
-

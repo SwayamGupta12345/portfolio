@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./facecard.css";
 import { LuSend } from "react-icons/lu";
 import Face from "./face";
 import "./styles/contact.css";
