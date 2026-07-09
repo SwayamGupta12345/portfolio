@@ -1,31 +1,45 @@
-import "./App.css"
-import "./styles/theme.css"
-import Facecard from "./facecard"
-import About from "./about"
-import Education from "./education"
-import Projects from "./projects"
-import Contact from "./contact"
-import Navbar from "./components/Navbar"
+import "./App.css";
+import "./styles/theme.css";
+import Facecard from "./facecard";
+import About from "./about";
+import Education from "./education";
+import Projects from "./projects";
+import Contact from "./contact";
+import Navbar from "./components/Navbar";
+import Portfolio from "./bento_landing";
+import { ThemeProvider } from "./utils/ThemeContext";
+import Skills from "./skills";
+import { useEffect, useState } from "react";
 
-import { ThemeProvider } from "./utils/ThemeContext"
-import Skills from "./skills"
+export default function App() {
+  const [isDesktop, setIsDesktop] = useState(false);
 
-function App() {
+  useEffect(() => {
+    const checkSize = () => {
+      setIsDesktop(window.innerWidth >= 1215);
+    };
+
+    checkSize();
+    window.addEventListener("resize", checkSize);
+
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
+
   return (
     <ThemeProvider>
       <div className="main-content">
         <Navbar />
+
+        {/* ONLY Portfolio is conditional*/}
+        {isDesktop && <Portfolio />}
+
         <Facecard />
         <About />
         <Education />
-        <Skills/>
+        <Skills />
         <Projects />
         <Contact />
-   
       </div>
     </ThemeProvider>
-  )
+  );
 }
-
-export default App
-
