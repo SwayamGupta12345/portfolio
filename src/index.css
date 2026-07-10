@@ -1,11 +1,13 @@
-  :root {
+@import "tailwindcss";
+
+:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color:var(--bg-primary);
+  background-color: var(--bg-primary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,7 +29,6 @@ body {
   overflow-x: hidden; /* Prevent both horizontal and vertical overflow */
   background-color: var(--bg-color);
 }
-
 
 h1 {
   font-size: 3.2em;
