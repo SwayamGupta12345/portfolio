@@ -16,21 +16,21 @@ import {
   FaDocker,
   FaNodeJs,
 } from "react-icons/fa";
+import { RiOpenaiFill, RiGeminiFill } from "react-icons/ri";
 import {
   SiTypescript,
   SiNextdotjs,
   SiTailwindcss,
   SiExpress,
   SiFastapi,
-  SiOpenai,
   SiRender,
   SiMongodb,
   SiVercel,
-  SiGoogle,
   SiHtml5,
-  SiCss3,
   SiCplusplus,
 } from "react-icons/si";
+import { DiCss3 } from "react-icons/di";
+
 import { GrMysql } from "react-icons/gr";
 import { MdPhoneIphone } from "react-icons/md";
 
@@ -54,15 +54,15 @@ const ICON_MAP = {
   SiTailwindcss: <SiTailwindcss />,
   SiExpress: <SiExpress />,
   SiFastapi: <SiFastapi />,
-  SiOpenai: <SiOpenai />,
+  RiOpenaiFill: <RiOpenaiFill />,
   SiRender: <SiRender />,
   SiMongodb: <SiMongodb />,
   SiVercel: <SiVercel />,
-  SiGoogle: <SiGoogle />,
+  RiGeminiFill: <RiGeminiFill />,
   GrMysql: <GrMysql />,
   MdPhoneIphone: <MdPhoneIphone />,
   SiHtml5: <SiHtml5 />,
-  SiCss3: <SiCss3 />,
+  SiCss3: <DiCss3 />,
   SiCplusplus: <SiCplusplus />,
 };
 
