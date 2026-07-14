@@ -73,7 +73,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav ref={navRef} className={`navbar ${isVisible ? "visible" : ""} ${scrolled ? "scrolled" : ""}`}>
+      <nav ref={navRef} className={`navbar ${isVisible ? "visible" : ""} ${scrolled ? "scrolled" : ""} w-full`}>
         <div className="logo">
           <span>Swayam Gupta</span>
         </div>
